@@ -5,10 +5,44 @@ import Link from "next/link";
 import { CiShoppingCart } from "react-icons/ci";
 import { BsChevronCompactUp } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const [showProfile, setShowProfile] = useState<boolean>(false);
   const [showNav, setShowNav] = useState<boolean>(false);
+  const { data: session } = useSession();
+  console.log(session?.user);
+
+  const SignOut = () => {
+    if (session && session.user) {
+      return (
+        <ul className="py-5 px-1 text-neutral-600">
+          <li className="hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer">
+            {session.user.name}
+          </li>
+          <li
+            onClick={() => signOut()}
+            className="whitespace-nowrap hover:text-red-600 px-5 py-2 cursor-pointer"
+          >
+            ログアウト
+          </li>
+          <li className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer">
+            <a href="/addproduct">商品の追加</a>
+          </li>
+        </ul>
+      );
+    }
+    return (
+      <ul>
+        <li
+          onClick={() => signIn()}
+          className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer"
+        >
+          SignIn
+        </li>
+      </ul>
+    );
+  };
 
   return (
     <div>
@@ -29,11 +63,13 @@ const Navbar = () => {
                   Filters
                 </a>
               </li>
-              <li>
-                <a href="mybrands" className="py-3 inline-block w-full">
-                  My Brands
-                </a>
-              </li>
+              {session?.user && (
+                <li>
+                  <a href="mybrands" className="py-3 inline-block w-full">
+                    My Brands
+                  </a>
+                </li>
+              )}
             </ul>
           </nav>
         </div>
@@ -53,7 +89,7 @@ const Navbar = () => {
                 showProfile ? "" : "hidden"
               }`}
             >
-              <Link href="/signin">SignIn</Link>
+              <SignOut />
             </div>
           </div>
           <Link href="/cart">
