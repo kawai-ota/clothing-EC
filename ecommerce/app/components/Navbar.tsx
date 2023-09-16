@@ -53,7 +53,7 @@ const Navbar = () => {
                 showProfile ? "" : "hidden"
               }`}
             >
-              <Link href="/sign">SignIn</Link>
+              <Link href="/signin">SignIn</Link>
             </div>
           </div>
           <Link href="/cart">
