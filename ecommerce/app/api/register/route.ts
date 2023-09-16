@@ -1,29 +1,23 @@
-import prisma from "@/app/prismadb";
+import prisma from "@/app/lib/prismadb";
 import bcrypt from "bcrypt";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
+  const body = await request.json();
+  const { name, email, password } = body;
+
+  const hashedPassword = await bcrypt.hash(password, 12);
+
   try {
-    const body = await request.json();
-    const { email, name, password } = body;
-
-    if (!email || !name || !password) {
-      return new NextResponse("入力情報が欠けています", { status: 400 });
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 12);
-
     const user = await prisma.user.create({
       data: {
-        email,
         name,
+        email,
         password: hashedPassword,
       },
     });
-
     return NextResponse.json(user);
-  } catch (error: any) {
-    console.log(error, "REGISTRATION_ERROR");
-    return new NextResponse("Internal Error", { status: 500 });
+  } catch {
+    return NextResponse.error();
   }
 }

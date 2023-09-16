@@ -1,83 +1,93 @@
 "use client";
-import axios from "axios";
-import React, { useCallback, useState } from "react";
-import { FieldValues, useForm, SubmitHandler } from "react-hook-form";
-import Input from "../components/Input";
-import { signIn } from "next-auth/react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import Button from "../components/Button";
+import Link from "next/link";
+import axios from "axios";
 
-const AuthForm = () => {
-  const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+type Props = {};
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FieldValues>({
-    defaultValues: {
-      name: "",
-      email: "",
-      password: "",
-    },
+const SignForm = (props: Props) => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    setIsLoading(true);
-    try {
-      await axios.post("/api/register", data); // Wait for the axios post request to complete
-      await signIn("credentials", data); // Wait for the signIn function to complete
-      router.push("/"); // Redirect to the desired page
-    } catch (error) {
-      console.error("An error occurred:", error);
-    } finally {
-      setIsLoading(false);
-    }
+  const router = useRouter();
+
+  const Register = () => {
+    const data = {
+      name: user.name,
+      email: user.email,
+      password: user.password,
+    };
+    axios
+      .post("/api/register", data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        router.push("/signin");
+      });
   };
   return (
-    <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-      <div className="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
-        <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
-          <Input
-            id="name"
-            label="名前"
-            register={register}
-            errors={errors}
-            disabled={isLoading}
-            required={false}
-          />
-
-          <Input
-            id="email"
-            label="メールアドレス"
-            register={register}
-            errors={errors}
-            required
-            disabled={isLoading}
-          />
-          <span style={{ color: "red" }}>
-            {errors.email && "メールアドレスは必須です"}
-          </span>
-          <Input
-            disabled={isLoading}
-            register={register}
-            errors={errors}
-            required
-            id="password"
-            label="パスワード"
-            type="password"
-          />
-          <span style={{ color: "red" }}>
-            {errors.password && "パスワードは必須です"}
-          </span>
-          <Button disabled={isLoading} fullWidth type="submit">
-            新規登録
-          </Button>
-        </form>
+    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+      <div className="p-10 rounded-lg shadow-lg flex flex-col">
+        <h1 className="text-xl font-medium mb-4">新規登録</h1>
+        <label htmlFor="" className="mb-2">
+          名前
+        </label>
+        <input
+          type="text"
+          className="p-2 border-gray-300 border-[1px] rounded-lg w-[300px] mb-4 focus:outline-none focus:border-gray-600 text-black"
+          id="名前"
+          value={user.name}
+          placeholder="name"
+          onChange={(e) => setUser({ ...user, name: e.target.value })}
+        />
+        <label htmlFor="" className="mb-2">
+          メールアドレス
+        </label>
+        <input
+          type="text"
+          className="p-2 border-gray-300 border-[1px] rounded-lg w-[300px] mb-4 focus:outline-none focus:border-gray-600 text-black"
+          id="email"
+          value={user.email}
+          placeholder="メールアドレス"
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+        />
+        <label htmlFor="" className="mb-2">
+          パスワード
+        </label>
+        <input
+          type="password"
+          className="p-2 border-gray-300 border-[1px] rounded-lg w-[300px] mb-4 focus:outline-none focus:border-gray-600 text-black"
+          id="password"
+          value={user.password}
+          placeholder="パスワード"
+          onChange={(e) => setUser({ ...user, password: e.target.value })}
+        />
+        <button
+          onClick={Register}
+          className="p-2 border bg-purple-600 rounded-lg text-white border-gray-300 mt-2 mb-4 focus:outline-none focus:border-gray-600"
+        >
+          登録
+        </button>
+        <Link
+          href="/signin"
+          className="text-sm text-center mt-5 text-neutral-600"
+        >
+          既にアカウントを作成していますか？
+        </Link>
+        <Link href="/" className="text-center mt-2">
+          TOPへ
+        </Link>
       </div>
     </div>
   );
 };
 
-export default AuthForm;
+export default SignForm;

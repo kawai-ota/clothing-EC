@@ -28,7 +28,7 @@ const Signinform = (props: Props) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <div className="p-10 rounded-lg shadow-lg flex flex-col">
-        <h1 className="text-xl font-medium mb-4">Sign In</h1>
+        <h1 className="text-xl font-medium mb-4">ログイン</h1>
         <label htmlFor="" className="mb-2">
           メールアドレス
         </label>
@@ -55,7 +55,7 @@ const Signinform = (props: Props) => {
           onClick={Login}
           className="p-2 border bg-purple-600 rounded-lg text-white border-gray-300 mt-2 mb-4 focus:outline-none focus:border-gray-600"
         >
-          登録
+          ログイン
         </button>
         <Link
           href="/signup"
@@ -64,7 +64,7 @@ const Signinform = (props: Props) => {
           アカウントが存在しません
         </Link>
         <Link href="/" className="text-center mt-2">
-          ホーム
+          TOPへ
         </Link>
       </div>
     </div>
