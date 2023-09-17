@@ -129,7 +129,7 @@ const Productform = (props: Props) => {
         </div>
         <div>
           <label htmlFor="store" className="font-medium">
-            店舗
+            ブランド名
           </label>
           <input
             type="text"
