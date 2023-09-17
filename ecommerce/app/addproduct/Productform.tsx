@@ -6,6 +6,8 @@ import Navbar from "../components/Navbar";
 import { useRouter } from "next/navigation";
 import Size from "../components/Size";
 import Color from "../components/Color";
+import Para from "../components/Para";
+import ImageUpload from "../components/ImageUpload";
 
 type Props = {};
 
@@ -15,7 +17,11 @@ const Productform = (props: Props) => {
   const router = useRouter();
   const [formData, setFormData] = useState({
     title: "",
-    description: "",
+    description: `<div>
+    <p>
+    商品説明の追加
+    </p>
+  </div>`,
     category: "",
     style: "",
     size: "",
@@ -26,6 +32,11 @@ const Productform = (props: Props) => {
     userId: id,
     store: "",
   });
+
+  const [Description, setDescription] = useState<string>("");
+  const [info, setInfo] = useState<any>();
+  const [imageUrls, setImageUrls] = useState<string[]>([]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({
@@ -49,6 +60,29 @@ const Productform = (props: Props) => {
       [e.target.name]: inventory,
     });
   };
+
+  const handleImageChange = () => {
+    const stringImages = JSON.stringify(imageUrls);
+    setFormData({
+      ...formData,
+      description: Description,
+      userId: id,
+    });
+  };
+
+  useEffect(() => {
+    console.log(formData.images);
+    console.log(formData);
+  }, [formData]);
+
+  useEffect(() => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      description: Description,
+      images: imageUrls.toString(),
+      userId: id,
+    }));
+  }, [imageUrls]);
 
   return (
     <div className="px-5 max-w-[1280px] mx-auto mb-10">
@@ -158,6 +192,23 @@ const Productform = (props: Props) => {
           <Color setFormData={setFormData} Color={formData.color} />
         </div>
       </div>
+      <label htmlFor="" className="mt-10 inline-block font-medium">
+        商品説明を追加
+      </label>
+      <Para
+        setDescription={setDescription}
+        description={formData.description}
+      />
+      <label htmlFor="" className="mt-10 inline-block font-medium">
+        商品画像の追加
+      </label>
+      <ImageUpload
+        info={info}
+        updateInfo={setInfo}
+        imageUrls={imageUrls}
+        setImageUrls={setImageUrls}
+        handleImageChange={handleImageChange}
+      />
     </div>
   );
 };

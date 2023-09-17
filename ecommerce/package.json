@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@prisma/client": "^5.3.1",
+    "@tiptap/pm": "^2.1.10",
+    "@tiptap/react": "^2.1.10",
+    "@tiptap/starter-kit": "^2.1.10",
     "@types/node": "20.6.2",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
