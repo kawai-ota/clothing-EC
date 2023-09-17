@@ -27,7 +27,7 @@ const Navbar = () => {
             ログアウト
           </li>
           <li className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer">
-            <a href="/addproduct">商品の追加</a>
+            <a href="/addproduct">ブランドの出品</a>
           </li>
         </ul>
       );
@@ -123,7 +123,7 @@ const Navbar = () => {
               Filters
             </a>
             <a href="/mybrands" className="py-3 inline-block w-full">
-              My Product
+              My brands
             </a>
           </li>
         </ul>
