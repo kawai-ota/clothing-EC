@@ -8,13 +8,13 @@ export async function POST(request: Request) {
     description,
     category,
     style,
+    store,
     size,
     inventory,
     color,
     price,
     images,
     userId,
-    store,
   } = body;
 
   try {

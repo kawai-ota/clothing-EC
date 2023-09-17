@@ -84,6 +84,17 @@ const Productform = (props: Props) => {
     }));
   }, [imageUrls]);
 
+  const postData = async () => {
+    handleImageChange();
+    try {
+      const response = await axios.post("/api/addproduct", formData);
+      router.push("/");
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="px-5 max-w-[1280px] mx-auto mb-10">
       <div>
@@ -209,6 +220,12 @@ const Productform = (props: Props) => {
         setImageUrls={setImageUrls}
         handleImageChange={handleImageChange}
       />
+      <button
+        onClick={postData}
+        className="text-white mt-10 border-[1px] bg-purple-500 rounded-lg px-5 p-2"
+      >
+        登録
+      </button>
     </div>
   );
 };
