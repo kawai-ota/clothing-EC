@@ -7,7 +7,6 @@ type Props = {};
 
 const Item = async (props: Props) => {
   const products = await prisma.product.findMany();
-  // console.log(products)
   if (products.length === 0) {
     return <div>empty</div>;
   }
