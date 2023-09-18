@@ -32,7 +32,7 @@ const Item = async (props: Props) => {
                   <p className="text-[13px] opacity-60">{product.store}</p>
                 </div>
                 <span className="px-2 font-medium bg-gray-100 rounded-lg">
-                  ${product.price}
+                  {product.price}円
                 </span>
               </div>
             </Link>
