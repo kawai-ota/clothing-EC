@@ -268,6 +268,12 @@ const Filter = (props: Props) => {
           </ul>
         </div>
       </div>
+      <div
+        onClick={() => setShowFilter(!showFilter)}
+        className="absolute md:hidden top-[20px] right-[-42px]  bg-gray-100 px-2 rounded-t-sm cursor-pointer"
+      >
+        フィルター
+      </div>
     </div>
   );
 };
