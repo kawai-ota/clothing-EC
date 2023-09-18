@@ -161,6 +161,112 @@ const Filter = (props: Props) => {
             ジャケット/アウター
           </span>
         </div>
+        <div className="border-b-[0.5px] pb-10">
+          <div className="flex items-center justify-between px-5 py-4 border-b-[0.5px] mb-5">
+            <h1 className="text-neutral-800">値段</h1>
+            <BsChevronUp size={18} className="text-neutral-600" />
+          </div>
+          <div className="grid grid-cols-2 gap-5 px-5 overflow-hidden">
+            <div className="flex flex-col justify-center items-center">
+              <label htmlFor="" className="text-[15px] opacity-75">
+                最安値
+              </label>
+              <div className="relative">
+                <span className="absolute left-3 top-1">￥</span>
+                <input
+                  className="w-full outline-none border-[1px] rounded-lg px-2 text-center py-[2px]"
+                  type="number"
+                  name="min"
+                  onChange={handleMinChange}
+                  value={price.min}
+                  id=""
+                />
+              </div>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <label htmlFor="" className="text-[15px] opacity-75">
+                最高値
+              </label>
+              <div className="relative">
+                <span className="absolute left-3 top-1">￥</span>
+                <input
+                  className="w-full outline-none border-[1px] rounded-lg px-2 text-center py-[2px]"
+                  type="number"
+                  name="max"
+                  onChange={handleMaxChange}
+                  value={price.max}
+                  id=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="border-b-[0.5px]">
+          <div className="flex items-center justify-between px-5 py-4 border-b-[0.5px] mb-5">
+            <h1 className="text-neutral-800">Colors</h1>
+          </div>
+          <ul className="grid grid-cols-4 px-5 gap-5 mb-4">
+            {allHexValue.map((hexvalue, index) => (
+              <li
+                key={index}
+                className={`w-[40px] h-[40px] rounded-2xl border-[0.5px] border-neutral-300 cursor-pointer ${
+                  selectedHexValues.includes(`#${hexvalue}`)
+                    ? "shadow-2xl opacity-25"
+                    : ""
+                }`}
+                style={{ backgroundColor: `#${hexvalue}` }}
+                onClick={() => toggleColor(`#${hexvalue}`)}
+              ></li>
+            ))}
+          </ul>
+        </div>
+        <div className="sizes">
+          <div className="flex items-center justify-between px-5 py-4 border-b-[0.5px] mb-5">
+            <h1 className="text-neutral-800">サイズ</h1>
+          </div>
+          <ul className="grid grid-cols-4 px-5 gap-5">
+            <li
+              className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${
+                selectedSize.includes("S") ? "bg-neutral-900 text-white" : ""
+              }`}
+              onClick={() => toggleSize("S")}
+            >
+              S
+            </li>
+            <li
+              className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${
+                selectedSize.includes("M") ? "bg-neutral-900 text-white" : ""
+              }`}
+              onClick={() => toggleSize("M")}
+            >
+              M
+            </li>
+            <li
+              className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${
+                selectedSize.includes("L") ? "bg-neutral-900 text-white" : ""
+              }`}
+              onClick={() => toggleSize("L")}
+            >
+              L
+            </li>
+            <li
+              className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${
+                selectedSize.includes("XL") ? "bg-neutral-900 text-white" : ""
+              }`}
+              onClick={() => toggleSize("XL")}
+            >
+              XL
+            </li>
+            <li
+              className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer ${
+                selectedSize.includes("2XL") ? "bg-neutral-900 text-white" : ""
+              }`}
+              onClick={() => toggleSize("2XL")}
+            >
+              2XL
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
