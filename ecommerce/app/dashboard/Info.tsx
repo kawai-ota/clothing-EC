@@ -4,7 +4,7 @@ import ReactStars from "react-rating-star-with-type";
 import { FaRegCommentDots } from "react-icons/fa";
 import { CiShoppingCart, CiCreditCard1 } from "react-icons/ci";
 import { SlTag } from "react-icons/sl";
-import { LiaShippingFastSolid } from "react-icons/lia";
+import { LiaBuyNLarge, LiaShippingFastSolid } from "react-icons/lia";
 import { PiCubeFocusThin } from "react-icons/pi";
 import { AiTwotoneEdit } from "react-icons/ai";
 import Size from "../components/Size";
@@ -12,7 +12,7 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import AddCart from "../components/AddCart";
 
-type InfoProps = {
+interface InfoProps {
   id: number;
   title: string;
   description: string;
@@ -25,9 +25,9 @@ type InfoProps = {
   price: number;
   images: string;
   userId: number;
-  //   rating: number;
-  //   numbercomments: number;
-};
+  // rating: number;
+  // numbercomments: number;
+}
 
 const Info: React.FC<InfoProps> = ({
   title,
@@ -103,6 +103,40 @@ const Info: React.FC<InfoProps> = ({
       <div className="flex items-center mt-7 space-x-10">
         <AddCart productId={id} />
       </div>
+      <hr className="w-9/12 mt-10" />
+      <div className="grid grid-cols-2 gap-10 opacity-70 mt-5">
+        <span className="text-sm flex items-center space-x-4">
+          <span className="p-2 bg-gray-100 inline-block rounded-full">
+            <CiCreditCard1 size={24} />
+          </span>
+          <p>お支払い方法について</p>
+        </span>
+        <span className="text-sm flex items-center space-x-4">
+          <span className="p-2 bg-gray-100 inline-block rounded-full">
+            <SlTag size={24} />
+          </span>
+          <p>サイズについて</p>
+        </span>
+        <span className="text-sm flex items-center space-x-4">
+          <span className="p-2 bg-gray-100 inline-block rounded-full">
+            <LiaShippingFastSolid size={24} />
+          </span>
+          <p>送料について</p>
+        </span>
+        <span className="text-sm flex items-center space-x-4">
+          <span className="p-2 bg-gray-100 inline-block rounded-full">
+            <PiCubeFocusThin size={24} />
+          </span>
+          <p>返品について</p>
+        </span>
+      </div>
+      {currentUserId === userId && (
+        <Link href={`/edit/${id}`}>
+          <span className="absolute top-0 right-0 p-2 bg-green-600 rounded-full text-white cursor-pointer">
+            <AiTwotoneEdit />
+          </span>
+        </Link>
+      )}
     </div>
   );
 };
