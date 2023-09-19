@@ -9,7 +9,7 @@ const Container = (props: Props) => {
   return (
     <div className="mb-[200px]">
       <div className="flex">
-        <Link href="/filters" className="">
+        <Link href="/filters">
           <div>
             <Filter />
           </div>
