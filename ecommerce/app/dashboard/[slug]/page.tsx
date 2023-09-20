@@ -5,6 +5,7 @@ import Info from "../Info";
 import Review from "@/app/components/Review";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
+import ReviewSection from "../ReviewSection";
 
 type Props = {};
 
@@ -18,11 +19,19 @@ export default async function Page({ params }: { params: { slug: string } }) {
     },
   });
 
-  //   const allReview = await prisma.findMany({
-  //     where: {
-  //       productId: productId,
-  //     },
-  //   });
+  const allReview = await prisma.review.findMany({
+    where: {
+      productId: productId,
+    },
+  });
+
+  let averageRating = 0;
+  if (allReview.length > 0) {
+    const totalRating = allReview.reduce((acc, review) => {
+      return acc + review.rating;
+    }, 0);
+    averageRating = totalRating / allReview.length;
+  }
 
   const urlString = product?.images;
 
@@ -37,8 +46,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
           {urlString && <ImageGallery imageUrls={urlString} />}
           <Info
             {...product}
-            // rating={averageRating}
-            // numberComments={allReview.length}
+            rating={averageRating}
+            numberComments={allReview.length}
           />
         </div>
       )}
@@ -89,7 +98,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <span className="font-medium text-xl">コメント & レビュー</span>
         </div>
         <div className="grid grid-cols-2">
-          <div></div>
+          <div>
+            {allReview.map((review, index) => (
+              <div key={review.id} className="mb-5">
+                <h1 className="mb-2 font-medium">コメント:{index + 1}</h1>
+                <ReviewSection {...review} />
+              </div>
+            ))}
+          </div>
           <Review productId={product?.id} userId={currentUserId} />
         </div>
       </div>

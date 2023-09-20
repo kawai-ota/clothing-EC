@@ -25,8 +25,8 @@ interface InfoProps {
   price: number;
   images: string;
   userId: number;
-  // rating: number;
-  // numbercomments: number;
+  rating: number;
+  numberComments: number;
 }
 
 const Info: React.FC<InfoProps> = ({
@@ -38,6 +38,8 @@ const Info: React.FC<InfoProps> = ({
   size,
   userId,
   store,
+  rating,
+  numberComments,
 }) => {
   const colors = color.split(",");
   const sizes = size.split(",");
@@ -59,10 +61,10 @@ const Info: React.FC<InfoProps> = ({
       <h1 className="text-2xl font-semibold">{title}</h1>
       <h3 className="text-sm text-neutral-500">{store}</h3>
       <div className="flex items-center space-x-12 mt-4">
-        <ReactStars value={2} size={20} />
+        <ReactStars value={rating} size={20} />
         <span className="flex items-start space-x-3">
           <FaRegCommentDots size={22} />
-          <span className="opacity-70 text-sm">121のコメント</span>
+          <span className="opacity-70 text-sm">{numberComments}のコメント</span>
         </span>
       </div>
       <h3 className="font-medium mt-8 mb-3 text-[14px]">サイズを選択</h3>
