@@ -1,8 +1,11 @@
 import React from "react";
 
-type Props = {};
+type ButtonProps = {
+  allIds: number[];
+  userId?: number;
+};
 
-const Button = (props: Props) => {
+const Button = (props: ButtonProps) => {
   return <div>Button</div>;
 };
 
