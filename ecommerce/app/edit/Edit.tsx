@@ -109,7 +109,7 @@ const Edit = ({
   const updateDate = async () => {
     handleImageChange();
     try {
-      const response = await axios.post("/api/updateproduct", formData);
+      const response = await axios.patch("/api/updateproduct", formData);
     } catch (error) {
       console.log(error);
     }
