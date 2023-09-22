@@ -1,6 +1,5 @@
 import prisma from "@/app/lib/prismadb";
 import { NextResponse } from "next/server";
-import DeleteCart from "../../components/DeleteCart";
 
 export async function POST(request: Request) {
   const body = await request.json();
