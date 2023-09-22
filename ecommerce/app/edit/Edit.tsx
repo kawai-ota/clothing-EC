@@ -38,6 +38,7 @@ const Edit = ({
   userId,
 }: EditProps) => {
   const Id = userId;
+  const router = useRouter();
   const [formData, setFormData] = useState({
     id: id,
     title: title,
@@ -56,7 +57,6 @@ const Edit = ({
   const [Description, setDescription] = useState<string>("");
   const [info, setInfo] = useState<any>();
   const [imageUrls, setImageUrls] = useState<string[]>([]);
-  const router = useRouter();
 
   useEffect(() => {
     if (formData.images) {
@@ -110,6 +110,7 @@ const Edit = ({
     handleImageChange();
     try {
       const response = await axios.patch("/api/updateproduct", formData);
+      router.push("/");
     } catch (error) {
       console.log(error);
     }
