@@ -2,8 +2,6 @@ import React from "react";
 import prisma from "@/app/lib/prismadb";
 import Edit from "../Edit";
 
-type EditProps = {};
-
 const page = async ({ params }: { params: { slug: string } }) => {
   const productId = parseInt(params.slug, 10);
 
