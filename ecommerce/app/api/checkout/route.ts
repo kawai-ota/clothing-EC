@@ -42,7 +42,7 @@ export async function POST(req: Request) {
         product_data: {
           name: product.title,
         },
-        unit_amount: product.price * 100,
+        unit_amount: product.price,
       },
     });
   });

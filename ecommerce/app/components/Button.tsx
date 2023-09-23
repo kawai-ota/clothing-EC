@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import React from "react";
 
 type ButtonProps = {
@@ -6,11 +7,21 @@ type ButtonProps = {
   userId?: number;
 };
 
-const Button = (props: ButtonProps) => {
+const Button = ({ allIds, userId }: ButtonProps) => {
+  const onCheckout = async () => {
+    const response = await axios.post("/api/checkout", {
+      productIds: allIds,
+      userId: userId,
+    });
+    window.location = response.data.url;
+  };
   return (
     <div className="flex items-center justify-center mt-20 cursor-pointer">
-      <span className="px-10 p-2 text-white bg-purple-600 rounded-full">
-        戻る
+      <span
+        onClick={onCheckout}
+        className="px-10 p-2 text-white bg-purple-600 rounded-full"
+      >
+        購入する
       </span>
     </div>
   );

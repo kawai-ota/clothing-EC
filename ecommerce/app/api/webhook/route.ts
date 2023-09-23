@@ -1,0 +1,47 @@
+import Stripe from "stripe";
+import prisma from "@/app/lib/prismadb";
+import { NextResponse } from "next/server";
+import { headers } from "next/headers";
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: "2023-08-16",
+  typescript: true,
+});
+
+export async function POST(request: Request) {
+  const body = await request.text();
+  const signature = headers().get("Stripe-Signature") as string;
+
+  let event: Stripe.Event;
+
+  try {
+    event = stripe.webhooks.constructEvent(
+      body,
+      signature,
+      process.env.WEBHOOK_SIGNIN_SECRET!
+    );
+  } catch (error: any) {
+    return new NextResponse(`WebHookでエラーが起きました:${error.message}`, {
+      status: 400,
+    });
+  }
+
+  const session = event.data.object as Stripe.Checkout.Session;
+
+  if (event.type === "checkout.session.completed") {
+    const paymentIntentSucceded = event.data.object;
+
+    const purchasedId = session?.metadata?.productIds;
+    const userId = parseInt(session?.metadata?.userId as string);
+
+    if (purchasedId) {
+      const jsonArray = JSON.parse(purchasedId);
+
+      if (Array.isArray(jsonArray)) {
+        for (const productId of jsonArray) {
+          await prisma.purchased;
+        }
+      }
+    }
+  }
+}
