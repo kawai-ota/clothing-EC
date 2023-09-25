@@ -39,3 +39,21 @@ export async function POST(request: Request) {
     return NextResponse.error();
   }
 }
+
+export async function DELETE(request: Request) {
+  const body = await request.json();
+  const { productId, userId } = body;
+
+  try {
+    const deleteProduct = await prisma.product.delete({
+      where: {
+        id: productId,
+        userId: userId,
+      },
+    });
+    return NextResponse.json(deleteProduct);
+  } catch (error) {
+    console.log("商品の削除に失敗しました", error);
+    return NextResponse.error();
+  }
+}
