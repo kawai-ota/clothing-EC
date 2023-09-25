@@ -19,6 +19,7 @@ model User {
   Product Product[]
   Cart Cart[]
   Review Review[]
+  Purchased Purchased[]
 }
 
 model Product{
@@ -37,6 +38,7 @@ model Product{
   User User @relation(fields:[userId],references: [id],onDelete: Cascade)
   Cart Cart[]
   Review Review[]
+  Purchased Purchased[]
   @@index([userId])
 }
 model Cart {
@@ -49,6 +51,16 @@ model Cart {
   @@index([userId])
 }
 
+model Purchased{
+  id Int @id @default(autoincrement())
+  isPaid Boolean
+  productId Int
+  Product Product @relation(fields: [productId],references: [id],onDelete: Cascade)
+  userId Int
+  User User @relation(fields: [userId],references: [id],onDelete: Cascade)
+  @@index([productId])
+  @@index([userId])
+}
 model Review {
   id Int @id @default(autoincrement())
   rating Int
