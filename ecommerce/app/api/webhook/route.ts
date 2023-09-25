@@ -39,9 +39,24 @@ export async function POST(request: Request) {
 
       if (Array.isArray(jsonArray)) {
         for (const productId of jsonArray) {
-          await prisma.purchased;
+          await prisma.purchased.create({
+            data: {
+              isPaid: true,
+              productId: productId,
+              userId: userId,
+            },
+          });
+          const cartItemDelete = {
+            userId: userId,
+            productId: productId,
+          };
+          await prisma.cart.deleteMany({
+            where: cartItemDelete,
+          });
         }
       }
     }
   }
+
+  return new NextResponse(null, { status: 200 });
 }
