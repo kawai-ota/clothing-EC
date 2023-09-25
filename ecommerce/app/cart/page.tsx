@@ -15,7 +15,7 @@ const page = async (props: Props) => {
         <Navbar />
         <AllCartProduct userId={session?.user?.id} />
         <hr className="mt-10 mb-10" />
-        {/* <AllPurchased userId={session?.user?.id} /> */}
+        <AllPurchased userId={session?.user?.id} />
       </div>
     </>
   );
