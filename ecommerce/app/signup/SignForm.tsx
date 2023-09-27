@@ -4,9 +4,9 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import axios from "axios";
 
-type Props = {};
+type SignFormProps = {};
 
-const SignForm = (props: Props) => {
+const SignForm = (props: SignFormProps) => {
   const [user, setUser] = useState({
     name: "",
     email: "",

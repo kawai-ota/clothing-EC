@@ -1,9 +1,9 @@
 import React from "react";
 import SignForm from "./SignForm";
 
-type Props = {};
+type SignUpProps = {};
 
-const page = (props: Props) => {
+const page = (props: SignUpProps) => {
   return <SignForm />;
 };
 
