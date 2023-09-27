@@ -55,18 +55,18 @@ const Navbar = () => {
             <ul className="flex items-center lg:space-x-10 space-x-7 opacity-70 text-[15px]">
               <li>
                 <a href="/" className="py-3 inline-block w-full">
-                  Shop
+                  ショップ
                 </a>
               </li>
               <li>
                 <a href="filters" className="py-3 inline-block w-full">
-                  Filters
+                  フィルター
                 </a>
               </li>
               {session?.user && (
                 <li>
                   <a href="mybrands" className="py-3 inline-block w-full">
-                    My Brands
+                    マイブランド
                   </a>
                 </li>
               )}
@@ -117,13 +117,13 @@ const Navbar = () => {
         <ul className="flex flex-col text-[15px] opacity-75 px-2">
           <li>
             <a href="/shop" className="py-3 inline-block w-full">
-              Shop
+              ショップ
             </a>
             <a href="/filters" className="py-3 inline-block w-full">
-              Filters
+              フィルター
             </a>
             <a href="/mybrands" className="py-3 inline-block w-full">
-              My brands
+              マイブランド
             </a>
           </li>
         </ul>
