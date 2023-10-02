@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { signIn } from "next-auth/react";
 
-type Props = {};
+type SignInFormProps = {};
 
-const Signinform = (props: Props) => {
+const Signinform = (props: SignInFormProps) => {
   const router = useRouter();
   const [user, setUser] = useState({
     email: "",
