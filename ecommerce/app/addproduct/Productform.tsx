@@ -9,9 +9,9 @@ import Color from "../components/Color";
 import Para from "../components/Para";
 import ImageUpload from "../components/ImageUpload";
 
-type Props = {};
+type ProductFormProps = {};
 
-const Productform = (props: Props) => {
+const Productform = (props: ProductFormProps) => {
   const { data: session } = useSession();
   const id = session?.user.id;
   const router = useRouter();
