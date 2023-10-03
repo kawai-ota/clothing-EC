@@ -18,10 +18,10 @@ const Productform = (props: ProductFormProps) => {
   const [formData, setFormData] = useState({
     title: "",
     description: `<div>
-    <p>
-    商品説明の追加
-    </p>
-  </div>`,
+        <p>
+        商品説明の追加
+        </p>
+      </div>`,
     category: "",
     style: "",
     size: "",
@@ -34,7 +34,7 @@ const Productform = (props: ProductFormProps) => {
   });
 
   const [Description, setDescription] = useState<string>("");
-  const [info, setInfo] = useState<any>();
+  const [info, updateinfo] = useState<any>();
   const [imageUrls, setImageUrls] = useState<string[]>([]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +44,6 @@ const Productform = (props: ProductFormProps) => {
       [name]: value,
     });
   };
-
   const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value =
       e.target.name === "price"
@@ -65,6 +64,7 @@ const Productform = (props: ProductFormProps) => {
     const stringImages = JSON.stringify(imageUrls);
     setFormData({
       ...formData,
+      images: stringImages,
       description: Description,
       userId: id,
     });
@@ -94,7 +94,6 @@ const Productform = (props: ProductFormProps) => {
       console.log(error);
     }
   };
-
   return (
     <div className="px-5 max-w-[1280px] mx-auto mb-10">
       <div>
@@ -215,7 +214,7 @@ const Productform = (props: ProductFormProps) => {
       </label>
       <ImageUpload
         info={info}
-        updateInfo={setInfo}
+        updateInfo={updateinfo}
         imageUrls={imageUrls}
         setImageUrls={setImageUrls}
         handleImageChange={handleImageChange}
