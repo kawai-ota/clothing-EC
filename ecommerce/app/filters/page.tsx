@@ -5,9 +5,9 @@ import axios from "axios";
 import Link from "next/link";
 import Filter from "./Filter";
 
-type Props = {};
+type FilterProps = {};
 
-const Page = (props: Props) => {
+const Page = (props: FilterProps) => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedSize, setSelectedSize] = useState<string[]>([]);
   const [allHexValues, setAllHexValues] = useState<string[]>([]);
