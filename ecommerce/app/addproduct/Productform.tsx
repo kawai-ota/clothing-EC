@@ -17,11 +17,7 @@ const Productform = (props: ProductFormProps) => {
   const router = useRouter();
   const [formData, setFormData] = useState({
     title: "",
-    description: `<div>
-        <p>
-        商品説明を追加してください
-        </p>
-      </div>`,
+    description: "",
     category: "",
     style: "",
     size: "",

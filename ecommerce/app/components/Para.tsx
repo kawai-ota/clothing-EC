@@ -18,7 +18,8 @@ const Para: React.FC<ParaProps> = ({ setDescription, description }) => {
           "prose w-full focus:outline-none leading-5 prose-a:text-pink-600 prose-a:font-semibold prose-a:no-underline",
       },
     },
-    content: "商品の説明の追加",
+
+    content: description,
   });
 
   const html = editor?.getHTML();
@@ -37,8 +38,7 @@ const Para: React.FC<ParaProps> = ({ setDescription, description }) => {
       }
     };
     document.addEventListener("mousedown", handler);
-  });
-
+  }, []);
   return (
     <div
       className={`mx-auto border-[1px] mt-4 rounded-xl ${
@@ -46,7 +46,7 @@ const Para: React.FC<ParaProps> = ({ setDescription, description }) => {
       }`}
       ref={menuRef}
     >
-      <TextEditor editor={editor} />
+      {/* <TextEditor editor={editor} /> */}
       <EditorContent
         editor={editor}
         style={{ padding: "18px" }}
