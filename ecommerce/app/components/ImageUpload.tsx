@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CldUploadWidget } from "next-cloudinary";
 
-type Props = {
+type ImageUploadProps = {
   info: any;
   updateInfo: React.Dispatch<React.SetStateAction<any>>;
   imageUrls: string[];
@@ -9,7 +9,7 @@ type Props = {
   handleImageChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const ImageUpload: React.FC<Props> = ({
+const ImageUpload: React.FC<ImageUploadProps> = ({
   info,
   updateInfo,
   imageUrls,
