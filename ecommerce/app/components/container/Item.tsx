@@ -8,7 +8,7 @@ type ItemProps = {};
 const Item = async (props: ItemProps) => {
   const products = await prisma.product.findMany();
   if (products.length === 0) {
-    return <div>empty</div>;
+    return <div>販売している商品はありません</div>;
   }
   return (
     <div>
