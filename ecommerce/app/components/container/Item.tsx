@@ -12,7 +12,7 @@ const Item = async (props: ItemProps) => {
   }
   return (
     <div>
-      <h1 className="py-3 text-xl">洋服</h1>
+      <h1 className="py-3 text-xl">販売商品</h1>
       <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 ">
         {products.map((product) => (
           <div key={product.id}>
