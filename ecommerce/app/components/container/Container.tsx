@@ -3,9 +3,9 @@ import React from "react";
 import Filter from "./Filter";
 import Item from "./Item";
 
-type Props = {};
+type ContainerProps = {};
 
-const Container = (props: Props) => {
+const Container = (props: ContainerProps) => {
   return (
     <div className="mb-[200px]">
       <div className="flex">
