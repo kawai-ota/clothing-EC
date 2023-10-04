@@ -3,12 +3,12 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import TextEditor from "./TextEditor";
 
-interface Para {
+interface ParaProps {
   setDescription: React.Dispatch<React.SetStateAction<any>>;
   description: string;
 }
 
-const Para: React.FC<Para> = ({ setDescription, description }) => {
+const Para: React.FC<ParaProps> = ({ setDescription, description }) => {
   const [focus, setFocus] = useState<boolean>(false);
   const editor = useEditor({
     extensions: [StarterKit],
