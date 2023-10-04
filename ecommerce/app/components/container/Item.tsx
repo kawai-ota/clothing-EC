@@ -3,9 +3,9 @@ import { AiOutlineHeart } from "react-icons/ai";
 import Link from "next/link";
 import prisma from "@/app/lib/prismadb";
 
-type Props = {};
+type ItemProps = {};
 
-const Item = async (props: Props) => {
+const Item = async (props: ItemProps) => {
   const products = await prisma.product.findMany();
   if (products.length === 0) {
     return <div>empty</div>;
