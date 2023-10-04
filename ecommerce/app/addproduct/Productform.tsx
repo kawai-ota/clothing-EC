@@ -19,7 +19,7 @@ const Productform = (props: ProductFormProps) => {
     title: "",
     description: `<div>
         <p>
-        商品説明の追加
+        商品説明を追加してください
         </p>
       </div>`,
     category: "",
@@ -196,7 +196,7 @@ const Productform = (props: ProductFormProps) => {
               className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
               name="color"
               value={formData.color}
-              onChange={handlePriceChange}
+              onChange={handleChange}
             />
           </div>
           <Color setFormData={setFormData} Color={formData.color} />

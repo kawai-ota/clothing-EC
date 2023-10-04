@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import ColorPicker from "react-pick-color";
 import { GrAdd } from "react-icons/gr";
 
-interface Props {
+interface ColorProps {
   setFormData: React.Dispatch<React.SetStateAction<any>>;
   Color: string;
 }
 
-const Color: React.FC<Props> = ({ setFormData, Color }) => {
+const Color: React.FC<ColorProps> = ({ setFormData, Color }) => {
   const [color, setColor] = useState("#fff");
   const [open, setOpen] = useState<boolean>(false);
   const colorArray: string[] = Color.split(",");
