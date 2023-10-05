@@ -104,29 +104,33 @@ const Filter = (props: FilterProps) => {
         <div className="flex flex-col py-3 pb-5 tet-sm text-neutral-600 border-b-[0.5px]">
           <span
             className={`py-3 px-5 ${
-              props.selectedCategories.includes("Blouses") ? "bg-purple-50" : ""
-            }`}
-            onClick={() => toggleCategory("Blouses")}
-          >
-            ブラウス
-          </span>
-          <span
-            className={`py-3 px-5 ${
-              props.selectedCategories.includes("Shirt") ? "bg-purple-50" : ""
-            }`}
-            onClick={() => toggleCategory("Shirt")}
-          >
-            シャツ
-          </span>
-          <span
-            className={`py-3 px-5 ${
-              props.selectedCategories.includes("Denim&Jeans")
+              props.selectedCategories.includes("トップス")
                 ? "bg-purple-50"
                 : ""
             }`}
-            onClick={() => toggleCategory("Denim&Jeans")}
+            onClick={() => toggleCategory("トップス")}
           >
-            デニム/ジーンズ
+            トップス
+          </span>
+          <span
+            className={`py-3 px-5 ${
+              props.selectedCategories.includes("ジャケット/アウター")
+                ? "bg-purple-50"
+                : ""
+            }`}
+            onClick={() => toggleCategory("ジャケット/アウター")}
+          >
+            ジャケット/アウター
+          </span>
+          <span
+            className={`py-3 px-5 ${
+              props.selectedCategories.includes("ボトムス")
+                ? "bg-purple-50"
+                : ""
+            }`}
+            onClick={() => toggleCategory("ボトムス")}
+          >
+            ボトムス
           </span>
           <span
             className={`py-3 px-5 ${
@@ -138,39 +142,41 @@ const Filter = (props: FilterProps) => {
           </span>
           <span
             className={`py-3 px-5 ${
-              props.selectedCategories.includes("Pants") ? "bg-purple-50" : ""
+              props.selectedCategories.includes("スカート")
+                ? "bg-purple-50"
+                : ""
             }`}
-            onClick={() => toggleCategory("Pants")}
-          >
-            パンツ
-          </span>
-          <span
-            className={`py-3 px-5 ${
-              props.selectedCategories.includes("Skirts") ? "bg-purple-50" : ""
-            }`}
-            onClick={() => toggleCategory("Skirts")}
+            onClick={() => toggleCategory("スカート")}
           >
             スカート
           </span>
           <span
             className={`py-3 px-5 ${
-              props.selectedCategories.includes("Tops&tees")
-                ? "bg-purple-50"
-                : ""
+              props.selectedCategories.includes("バッグ") ? "bg-purple-50" : ""
             }`}
-            onClick={() => toggleCategory("Tops&tees")}
+            onClick={() => toggleCategory("バッグ")}
           >
-            トップス
+            バッグ
           </span>
           <span
             className={`py-3 px-5 ${
-              props.selectedCategories.includes("Jackets&Coats")
+              props.selectedCategories.includes("シューズ")
                 ? "bg-purple-50"
                 : ""
             }`}
-            onClick={() => toggleCategory("Jackets&Coats")}
+            onClick={() => toggleCategory("シューズ")}
           >
-            ジャケット/アウター
+            シューズ
+          </span>
+          <span
+            className={`py-3 px-5 ${
+              props.selectedCategories.includes("ステッカー")
+                ? "bg-purple-50"
+                : ""
+            }`}
+            onClick={() => toggleCategory("ステッカー")}
+          >
+            ステッカー
           </span>
         </div>
         <div className="border-b-[0.5px] pb-10">
