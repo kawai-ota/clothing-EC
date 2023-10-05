@@ -107,6 +107,7 @@ const Filter = (props: FilterProps) => {
             className={`py-3 px-5 ${
               selectedCategories.includes("Shirt") ? "bg-purple-500" : ""
             }`}
+            onClick={() => toggleCategory("Shirt")}
           >
             シャツ
           </span>
