@@ -206,7 +206,7 @@ const Filter = (props: FilterProps) => {
         </div>
         <div className="border-b-[0.5px]">
           <div className="flex items-center justify-between px-5 py-4 border-b-[0.5px] mb-5">
-            <h1 className="text-neutral-800">Colors</h1>
+            <h1 className="text-neutral-800">カラー</h1>
           </div>
           <ul className="grid grid-cols-4 px-5 gap-5 mb-4">
             {allHexValue.map((hexvalue, index) => (
