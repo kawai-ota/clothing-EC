@@ -3,9 +3,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BsSliders2Vertical, BsChevronUp } from "react-icons/bs";
 
-type Props = {};
+type FilterProps = {};
 
-const Filter = (props: Props) => {
+const Filter = (props: FilterProps) => {
   const [showFilter, setShowFilter] = useState<boolean>(false);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedSize, setSelectedSize] = useState<string[]>([]);
