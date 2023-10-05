@@ -11,7 +11,7 @@ const Filter = (props: FilterProps) => {
   const [selectedSize, setSelectedSize] = useState<string[]>([]);
   const [allHexValues, setHexValues] = useState<string[]>([]);
   const [selectedHexValues, setSelectedHexValues] = useState<string[]>([]);
-  const [price, setPrice] = useState({ min: 0, max: 100 });
+  const [price, setPrice] = useState({ min: 0, max: 0 });
 
   const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value =
