@@ -49,7 +49,7 @@ const Page = (props: FilterProps) => {
   }, [selectedCategories, selectedSize, selectedHexValues, price]);
 
   return (
-    <div className="px-5 max-w-[1280px] mx-auto">
+    <div className="px-5 max-w-[1280px] mb-[100px] mx-auto">
       <div>
         <Navbar />
       </div>
@@ -70,7 +70,7 @@ const Page = (props: FilterProps) => {
           />
         </div>
         <div className="px-10">
-          <h1 className="py-3 text-2xl font-medium">洋服</h1>
+          <h1 className="py-3 text-2xl font-medium">販売商品</h1>
           <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 mt-5">
             {response.map((product: any) => (
               <div key={product.id}>
