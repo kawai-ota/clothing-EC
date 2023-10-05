@@ -14,7 +14,7 @@ const Page = (props: FilterProps) => {
   const [selectedHexValues, setSelectedHexValues] = useState<string[]>([]);
   const [price, setPrice] = useState({
     min: 0,
-    max: 10,
+    max: 0,
   });
 
   const [response, setResponse] = useState<any[]>([]);
