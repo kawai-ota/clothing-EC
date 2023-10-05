@@ -10,9 +10,9 @@ const Container = (props: ContainerProps) => {
     <div className="mb-[200px]">
       <div className="flex">
         {/* <Link href="/filters"> */}
-        <div>
+        {/* <div>
           <Filter />
-        </div>
+        </div> */}
         {/* </Link> */}
         <div className="px-20">
           <Item />
