@@ -41,7 +41,7 @@ const Review = ({ productId, userId }: ReviewProps) => {
   return (
     <div>
       <h1 className="text-xl font-medium mb-4">レビューを書く</h1>
-      <h2 className="mb-2">星をつける</h2>
+      <h2 className="mb-2">評価する</h2>
       <ReactStars
         onChange={onChange}
         value={defaultReviewForm.star}
