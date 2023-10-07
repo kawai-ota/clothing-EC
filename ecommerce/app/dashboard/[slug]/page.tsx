@@ -7,7 +7,7 @@ import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import ReviewSection from "../ReviewSection";
 
-type Props = {};
+type dashboardProps = {};
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const productId = parseInt(params.slug, 10);
