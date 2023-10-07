@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import ReactStars from "react-rating-star-with-type";
 import { useRouter } from "next/navigation";
-import next from "next";
 import axios from "axios";
 
 type ReviewProps = {
