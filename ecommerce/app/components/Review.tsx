@@ -63,7 +63,7 @@ const Review = ({ productId, userId }: ReviewProps) => {
         className="px-5 p-2 border-[1px] bg-purple-600 text-white rounded-lg mt-5"
         onClick={postData}
       >
-        登録
+        投稿
       </button>
     </div>
   );
