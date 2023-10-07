@@ -9,12 +9,7 @@ type ReviewSectionProps = {
   userId: number;
 };
 
-const ReviewSection = ({
-  rating,
-  commentry,
-  productId,
-  userId,
-}: ReviewSectionProps) => {
+const ReviewSection = ({ rating, commentry }: ReviewSectionProps) => {
   return (
     <div>
       <ReactStars
