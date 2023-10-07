@@ -95,12 +95,7 @@ const Info: React.FC<InfoProps> = ({
             backgroundColor: color,
             display: "inline-block",
           }}
-        >
-          <span
-            className="w-[30px] h-[30px] rounded-full flex top-[50%]  left-[50%] translate-x-[-50%] translate-y-[-50%] absolute border-[1px]"
-            style={{ backgroundColor: color }}
-          ></span>
-        </div>
+        ></div>
       ))}
       <div className="flex items-center mt-7 space-x-10">
         <AddCart productId={id} />
