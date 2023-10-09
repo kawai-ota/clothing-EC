@@ -29,7 +29,6 @@ const page = async ({ params }: { params: { slug: string } }) => {
       <div>商品の取得中にエラーが起きました。もう一度やり直してください</div>
     );
   }
-  return <div>page</div>;
 };
 
 export default page;

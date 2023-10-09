@@ -23,16 +23,6 @@ const AllPurchased = async ({ userId }: AllPurchasedProps) => {
 
   const purchaseProducts = await Promise.all(cartProdcutPromises);
 
-  // if (purchaseProducts.length === 0) {
-  //   return (
-  //     <div className="relative flex items-center justify-center">
-  //       <img src="empty.png" alt="" />
-  //       <h1 className="absolute top-[80%] text-2xl text-purple-600">
-  //         カートは空です
-  //       </h1>
-  //     </div>
-  //   );
-  // }
   return (
     <div className="mt-14">
       {purchaseProducts.map((cartProduct) => (
