@@ -5,9 +5,9 @@ import Navbar from "../components/Navbar";
 import AllCartProduct from "../components/AllCartProduct";
 import AllPurchased from "../components/AllPurchased";
 
-type Props = {};
+type CartProps = {};
 
-const page = async (props: Props) => {
+const page = async (props: CartProps) => {
   const session = await getServerSession(options);
   return (
     <>
