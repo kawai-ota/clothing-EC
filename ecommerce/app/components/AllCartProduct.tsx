@@ -48,7 +48,7 @@ const AllCartProduct = async (props: AllCartProductProps) => {
           <div>
             <h1 className="text-2xl mb-3">{cartProduct?.title}</h1>
             <h2 className="mb-2 text-neutral-800 ">
-              値段:{cartProduct?.price}
+              値段:{cartProduct?.price}円
             </h2>
             <h3 className="text-sm text-neutral-600 mb-2">
               カテゴリー:{cartProduct?.category}
