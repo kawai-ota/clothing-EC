@@ -13,7 +13,6 @@ export async function POST(request: Request) {
       },
     });
 
-    console.log(existingCartItem);
     if (existingCartItem) {
       await prisma.cart.delete({
         where: {
