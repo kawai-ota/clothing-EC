@@ -56,7 +56,11 @@ export async function POST(req: Request) {
       enabled: false,
     },
     success_url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/cart?success=1`,
-    cancel_url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/cart?success=1`,
+    cancel_url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/cart?cancelled=1`,
+    metadata:{
+      productIds:JSON.stringify(productIds),
+      userId:userId
+    }
   });
 
   return NextResponse.json({ url: session.url }, { headers: corsHeader });
