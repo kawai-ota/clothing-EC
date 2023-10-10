@@ -38,10 +38,10 @@ const page = async (props: MyBrandsProps) => {
           >
             <div>
               <h1 className="mb-3">{product.title}</h1>
-              <h1 className="mb-3"> 値段: {product.price}</h1>
-              <h1 className="mb-3"> カテゴリー: {product.category}</h1>
-              <h1 className="mb-3"> スタイル: {product.style}</h1>
-              <h1 className="mb-3"> アパレル名: {product.store}</h1>
+              <h1 className="mb-3"> 値段:{product.price}円</h1>
+              <h1 className="mb-3"> カテゴリー:{product.category}</h1>
+              <h1 className="mb-3"> スタイル:{product.style}</h1>
+              <h1 className="mb-3"> アパレル名:{product.store}</h1>
               <DeleteProduct productId={product.id} userId={product.userId} />
             </div>
             <Link href={`/dashboard/${product.id}`}>
