@@ -18,7 +18,8 @@ export async function OPTIONS() {
 }
 
 export async function POST(req: Request) {
-  const { productIds, userId } = await req.json();
+  const body = await req.json();
+  const { productIds, userId } = await body;
 
   if (!productIds || productIds.length === 0) {
     return new NextResponse("商品が見つかりません", { status: 400 });
