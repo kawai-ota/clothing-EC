@@ -218,7 +218,7 @@ const Edit = ({
               className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
               name="color"
               value={formData.color}
-              onChange={handlePriceChange}
+              onChange={handleChange}
             />
           </div>
           <Color setFormData={setFormData} Color={formData.color} />
