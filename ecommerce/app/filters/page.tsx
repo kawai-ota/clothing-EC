@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import axios from "axios";
 import Link from "next/link";
 import Filter from "./Filter";
+import { BiChevronDown } from "react-icons/bi";
 
 type FilterProps = {};
 
@@ -52,13 +53,7 @@ const Page = (props: FilterProps) => {
     <div className="px-5 max-w-[1280px] mb-[100px] mx-auto">
       <div>
         <Navbar />
-      </div>
-      <hr />
-      <div className="flex items-center ml-28 mt-10 ">
-        <div className="px-10">
-          <h1 className="py-3 text-3xl font-medium">販売商品</h1>
-          <div className="flex flex-row">
-            {
+        {/* {
               <Filter
                 selectedCategories={selectedCategories}
                 setSelectedCategories={setSelectedCategories}
@@ -71,9 +66,40 @@ const Page = (props: FilterProps) => {
                 price={price}
                 setPrice={setPrice}
               />
-            }
+            } */}
+      </div>
+      <hr />
+      <div className="flex items-center ml-28 mt-10 ">
+        <div className="px-10">
+          <h1 className="py-3 mb-10 text-3xl font-medium">商品</h1>
+          <div className="flex flex-row">
+            <div className="text-gray-600">絞り込み:</div>
+            <div className="ml-5">
+              <span className="flex flex-row items-center text-gray-600 cursor-pointer">
+                カテゴリー
+                <BiChevronDown className="ml-2" />
+              </span>
+            </div>
+            <div className="ml-5">
+              <span className="flex flex-row items-center text-gray-600 cursor-pointer">
+                カラー
+                <BiChevronDown className="ml-2" />
+              </span>
+            </div>
+            <div className="ml-5">
+              <span className="flex flex-row items-center text-gray-600 cursor-pointer">
+                価格
+                <BiChevronDown className="ml-2" />
+              </span>
+            </div>
+            <div className="ml-5">
+              <span className="flex flex-row items-center text-gray-600 cursor-pointer">
+                サイズ
+                <BiChevronDown className="ml-2" />
+              </span>
+            </div>
           </div>
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 mt-5">
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 mt-8">
             {response.map((product: any) => (
               <div key={product.id}>
                 <Link href={`/dashboard/${product.id}`}>
