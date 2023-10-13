@@ -55,12 +55,17 @@ const Navbar = () => {
             <ul className="flex items-center lg:space-x-10 space-x-7 opacity-70 text-[15px]">
               <li>
                 <a href="/" className="py-3 inline-block w-full">
-                  ショップ
+                  カタログ
                 </a>
               </li>
               <li>
                 <a href="filters" className="py-3 inline-block w-full">
                   フィルター
+                </a>
+              </li>
+              <li>
+                <a href="contact" className="py-3 inline-block w-full">
+                  お問い合わせ
                 </a>
               </li>
               {session?.user && (
@@ -77,7 +82,6 @@ const Navbar = () => {
           onClick={() => setShowProfile(!showProfile)}
           className="flex items-center space-x-4"
         >
-          <SearchBar />
           <div className="relative cursor-pointer">
             <img
               src="user.jpg"
@@ -116,11 +120,14 @@ const Navbar = () => {
       >
         <ul className="flex flex-col text-[15px] opacity-75 px-2">
           <li>
-            <a href="/shop" className="py-3 inline-block w-full">
-              ショップ
+            <a href="/" className="py-3 inline-block w-full">
+              カタログ
             </a>
             <a href="/filters" className="py-3 inline-block w-full">
               フィルター
+            </a>
+            <a href="/contact" className="py-3 inline-block w-full">
+              お問い合わせ
             </a>
             <a href="/mybrands" className="py-3 inline-block w-full">
               マイブランド
