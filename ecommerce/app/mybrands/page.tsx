@@ -21,7 +21,7 @@ const page = async (props: MyBrandsProps) => {
     return (
       <div className="relative flex items-center justify-center">
         <img src="empty.png" alt="" />
-        <h1 className="absolute top-[80%] text-2xl text-purple-600">
+        <h1 className="absolute top-[80%] text-2xl text-[#3EBCB5]">
           出品している商品はありません。
         </h1>
       </div>
@@ -34,7 +34,7 @@ const page = async (props: MyBrandsProps) => {
         {allmyproduct.map((product) => (
           <div
             key={product.id}
-            className="relative flex items-center justify-between w-8/12 px-6 mx-auto shadow-lg shadow-purple-100 p-5 rounded-lg mt-10"
+            className="relative flex items-center justify-between w-8/12 px-6 mx-auto shadow-lg  p-5 rounded-lg mt-10"
           >
             <div>
               <h1 className="mb-3">{product.title}</h1>
