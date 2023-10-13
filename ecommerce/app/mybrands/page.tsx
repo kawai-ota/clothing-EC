@@ -30,6 +30,7 @@ const page = async (props: MyBrandsProps) => {
   return (
     <div className="max-w-[1280px] mx-auto">
       <Navbar />
+      <hr />
       <div>
         {allmyproduct.map((product) => (
           <div
