@@ -31,7 +31,7 @@ const AllCartProduct = async (props: AllCartProductProps) => {
     return (
       <div className="relative flex items-center justify-center">
         <img src="empty.png" alt="" />
-        <h1 className="absolute top-[80%] text-2xl text-purple-600">
+        <h1 className="absolute top-[80%] text-2xl text-[#3EBCB5]">
           カートに商品が入っていません。
         </h1>
       </div>

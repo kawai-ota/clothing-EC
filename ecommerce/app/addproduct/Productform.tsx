@@ -217,7 +217,7 @@ const Productform = (props: ProductFormProps) => {
       />
       <button
         onClick={postData}
-        className="text-white mt-10 border-[1px] bg-purple-500 rounded-lg px-5 p-2"
+        className="text-white mt-10 border-[1px] bg-[#3EBCB5] rounded-lg px-5 p-2"
       >
         登録
       </button>

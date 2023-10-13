@@ -46,12 +46,12 @@ const Review = ({ productId, userId }: ReviewProps) => {
         value={defaultReviewForm.star}
         size={17}
         isEdit={true}
-        activeColors={["red", "orange", "#FFCE00", "#9177FF", "#8568FC"]}
+        activeColors={["red", "orange", "#FFCE00", "#9177FF", "#3EBCB5"]}
       />
       <h2 className="mt-4">コメントを書いてください</h2>
       <div>
         <input
-          className="border-[1px] border-purple-300 rounded-lg w-full h-[40px] focus:border-purple-500 px-2 mt-2"
+          className="border-[1px] border-gray-300 rounded-lg w-full h-[40px] focus:border-[#3EBCB5] px-2 mt-2"
           type="text"
           name="comment"
           onChange={handleChange}
@@ -59,7 +59,7 @@ const Review = ({ productId, userId }: ReviewProps) => {
         />
       </div>
       <button
-        className="px-5 p-2 border-[1px] bg-purple-600 text-white rounded-lg mt-5"
+        className="px-5 p-2 border-[1px] bg-[#3EBCB5] text-white rounded-lg mt-5"
         onClick={postData}
       >
         投稿

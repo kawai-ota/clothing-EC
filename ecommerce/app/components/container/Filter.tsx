@@ -97,7 +97,7 @@ const Filter = (props: FilterProps) => {
         <div className="flex flex-col py-3 pb-5 text-sm text-neutral-600 border-b-[0.5px]">
           <span
             className={`py-3 px-5 ${
-              selectedCategories.includes("トップス") ? "bg-purple-500" : ""
+              selectedCategories.includes("トップス") ? "bg-[#3EBCB5]" : ""
             }`}
             onClick={() => toggleCategory("トップス")}
           >
@@ -106,7 +106,7 @@ const Filter = (props: FilterProps) => {
           <span
             className={`py-3 px-5 ${
               selectedCategories.includes("ジャケット/アウター")
-                ? "bg-purple-500"
+                ? "bg-[#3EBCB5]"
                 : ""
             }`}
             onClick={() => toggleCategory("ジャケット/アウター")}
@@ -115,7 +115,7 @@ const Filter = (props: FilterProps) => {
           </span>
           <span
             className={`py-3 px-5 ${
-              selectedCategories.includes("ボトムス") ? "bg-purple-500" : ""
+              selectedCategories.includes("ボトムス") ? "bg-[#3EBCB5]" : ""
             }`}
             onClick={() => toggleCategory("ボトムス")}
           >
@@ -124,7 +124,7 @@ const Filter = (props: FilterProps) => {
           <span
             className={`py-3 px-5 ${
               selectedCategories.includes("ワンピース/ドレス")
-                ? "bg-purple-500"
+                ? "bg-[#3EBCB5]"
                 : ""
             }`}
             onClick={() => toggleCategory("ワンピース/ドレス")}
@@ -133,7 +133,7 @@ const Filter = (props: FilterProps) => {
           </span>
           <span
             className={`py-3 px-5 ${
-              selectedCategories.includes("スカート") ? "bg-purple-500" : ""
+              selectedCategories.includes("スカート") ? "bg-[#3EBCB5]" : ""
             }`}
             onClick={() => toggleCategory("スカート")}
           >
@@ -141,7 +141,7 @@ const Filter = (props: FilterProps) => {
           </span>
           <span
             className={`py-3 px-5 ${
-              selectedCategories.includes("バッグ") ? "bg-purple-500" : ""
+              selectedCategories.includes("バッグ") ? "bg-[#3EBCB5]" : ""
             }`}
             onClick={() => toggleCategory("バッグ")}
           >
@@ -149,7 +149,7 @@ const Filter = (props: FilterProps) => {
           </span>
           <span
             className={`py-3 px-5 ${
-              selectedCategories.includes("シューズ") ? "bg-purple-500" : ""
+              selectedCategories.includes("シューズ") ? "bg-[#3EBCB5]" : ""
             }`}
             onClick={() => toggleCategory("シューズ")}
           >
@@ -157,7 +157,7 @@ const Filter = (props: FilterProps) => {
           </span>
           <span
             className={`py-3 px-5 ${
-              selectedCategories.includes("ステッカー") ? "bg-purple-500" : ""
+              selectedCategories.includes("ステッカー") ? "bg-[#3EBCB5]" : ""
             }`}
             onClick={() => toggleCategory("ステッカー")}
           >

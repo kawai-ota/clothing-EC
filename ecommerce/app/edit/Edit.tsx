@@ -129,7 +129,7 @@ const Edit = ({
           </label>
           <input
             type="text"
-            className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+            className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
             name="title"
             value={formData.title}
             onChange={handleChange}
@@ -141,7 +141,7 @@ const Edit = ({
           </label>
           <input
             type="text"
-            className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+            className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
             name="category"
             value={formData.category}
             onChange={handleChange}
@@ -153,7 +153,7 @@ const Edit = ({
           </label>
           <input
             type="text"
-            className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+            className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
             name="style"
             value={formData.style}
             onChange={handleChange}
@@ -165,7 +165,7 @@ const Edit = ({
           </label>
           <input
             type="text"
-            className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+            className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
             name="store"
             value={formData.store}
             onChange={handleChange}
@@ -177,7 +177,7 @@ const Edit = ({
           </label>
           <input
             type="text"
-            className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+            className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
             name="size"
             value={formData.size}
             onChange={handleChange}
@@ -190,7 +190,7 @@ const Edit = ({
           </label>
           <input
             type="number"
-            className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+            className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
             name="inventory"
             value={formData.inventory}
             onChange={handlePriceChange}
@@ -202,7 +202,7 @@ const Edit = ({
           </label>
           <input
             type="number"
-            className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+            className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
             name="price"
             value={formData.price}
             onChange={handlePriceChange}
@@ -215,7 +215,7 @@ const Edit = ({
             </label>
             <input
               type="text"
-              className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+              className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
               name="color"
               value={formData.color}
               onChange={handleChange}
@@ -243,7 +243,7 @@ const Edit = ({
       />
       <button
         onClick={updateDate}
-        className="text-white mt-10 border-[1px] bg-purple-500 rounded-lg px-5 p-2"
+        className="text-white mt-10 border-[1px] bg-[#3EBCB5] rounded-lg px-5 p-2"
       >
         編集
       </button>

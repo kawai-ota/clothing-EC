@@ -15,7 +15,7 @@ const ReviewSection = ({ rating, commentry }: ReviewSectionProps) => {
       <ReactStars
         value={rating}
         // isEdit={true}
-        activeColors={["red", "orange", "#FFCE00", "#9177FF", "#8568FC"]}
+        activeColors={["red", "orange", "#FFCE00", "#9177FF", "#3EBCB5"]}
       />
       <p className="mt-2">{commentry}</p>
     </div>

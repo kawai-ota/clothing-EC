@@ -53,7 +53,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
       )}
       <div className="mb-20 mt-20">
         <div className="flex items-center space-x-5 mb-10">
-          <span className="w-[5px] h-[30px] bg-purple-600 rounded-full inline-block"></span>
+          <span className="w-[5px] h-[30px] bg-[#3EBCB5] rounded-full inline-block"></span>
           <span className="font-medium text-xl">商品説明</span>
         </div>
         {product && (
@@ -94,7 +94,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </div>
       <div className="mt-20 mb-20">
         <div className="flex items-center space-x-5 mb-10">
-          <span className="w-[5px] h-[30px] bg-purple-600 rounded-full inline-block"></span>
+          <span className="w-[5px] h-[30px] bg-[#3EBCB5] rounded-full inline-block"></span>
           <span className="font-medium text-xl">コメント & レビュー</span>
         </div>
         <div className="grid grid-cols-2">

@@ -12,8 +12,8 @@ const Item = async (props: ItemProps) => {
   }
   return (
     <div>
-      <h1 className="py-3 text-xl">販売商品</h1>
-      <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 ">
+      <h1 className="py-3 font-medium text-3xl ml-20 mt-10 mb-5">販売商品</h1>
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 ml-20">
         {products.map((product) => (
           <div key={product.id}>
             <Link href={`/dashboard/${product.id}`}>
