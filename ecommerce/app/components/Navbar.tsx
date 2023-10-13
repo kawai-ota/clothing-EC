@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-between py-4 relative">
+      <div className="flex items-center justify-between py-12 relative">
         <div className="flex items-center md:space-x-10 lg:space-x-20">
           <div className="font-semibold text-2xl">
             <a href="/">PAM</a>
@@ -97,7 +97,7 @@ const Navbar = () => {
             </div>
           </div>
           <Link href="/cart">
-            <div className="p-2 bg-gray-100 rounded-full">
+            <div className="p-3 bg-gray-100 rounded-full ml-4">
               <CiShoppingCart size={20} />
             </div>
           </Link>
