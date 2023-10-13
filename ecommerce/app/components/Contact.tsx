@@ -15,7 +15,9 @@ const Contact = (props: ContactProps) => {
     <>
       <div className="flex flex-col items-center justify-center mx-auto mt-10 space-y-6">
         <h1 className="text-5xl text-center">お問い合わせ</h1>
-        (現在機能開発中に伴い、メールマークからお問い合わせお願いいたします。)
+        <h2>
+          (現在機能開発中に伴い、メールマークからお問い合わせお願いいたします。)
+        </h2>
         <div className="flex flex-col">
           <div className="grid grid-cols-2">
             <input

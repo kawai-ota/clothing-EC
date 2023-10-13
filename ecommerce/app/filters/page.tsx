@@ -55,22 +55,24 @@ const Page = (props: FilterProps) => {
       </div>
       <hr />
       <div className="flex items-center ml-28 mt-10 ">
-        <div>
-          {/* <Filter
-            selectedCategories={selectedCategories}
-            setSelectedCategories={setSelectedCategories}
-            selectedSize={selectedSize}
-            setSelectedSize={setSelectedSize}
-            allHexValues={allHexValues}
-            setAllHexValues={setAllHexValues}
-            selectedHexValues={selectedHexValues}
-            setSelectedAllHexValues={setSelectedHexValues}
-            price={price}
-            setPrice={setPrice}
-          /> */}
-        </div>
         <div className="px-10">
           <h1 className="py-3 text-3xl font-medium">販売商品</h1>
+          <div className="flex flex-row">
+            {
+              <Filter
+                selectedCategories={selectedCategories}
+                setSelectedCategories={setSelectedCategories}
+                selectedSize={selectedSize}
+                setSelectedSize={setSelectedSize}
+                allHexValues={allHexValues}
+                setAllHexValues={setAllHexValues}
+                selectedHexValues={selectedHexValues}
+                setSelectedAllHexValues={setSelectedHexValues}
+                price={price}
+                setPrice={setPrice}
+              />
+            }
+          </div>
           <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 mt-5">
             {response.map((product: any) => (
               <div key={product.id}>
