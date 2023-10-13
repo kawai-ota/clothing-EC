@@ -53,7 +53,7 @@ const Signinform = (props: SignInFormProps) => {
         />
         <button
           onClick={Login}
-          className="p-2 border bg-purple-600 rounded-lg text-white border-gray-300 mt-2 mb-4 focus:outline-none focus:border-gray-600"
+          className="p-2 border bg-[#3EBCB5] rounded-lg text-white border-gray-300 mt-2 mb-4 focus:outline-none focus:border-gray-600"
         >
           ログイン
         </button>
