@@ -54,9 +54,9 @@ const Page = (props: FilterProps) => {
         <Navbar />
       </div>
       <hr />
-      <div className="flex">
+      <div className="flex items-center ml-28 mt-10 ">
         <div>
-          <Filter
+          {/* <Filter
             selectedCategories={selectedCategories}
             setSelectedCategories={setSelectedCategories}
             selectedSize={selectedSize}
@@ -67,10 +67,10 @@ const Page = (props: FilterProps) => {
             setSelectedAllHexValues={setSelectedHexValues}
             price={price}
             setPrice={setPrice}
-          />
+          /> */}
         </div>
         <div className="px-10">
-          <h1 className="py-3 text-2xl font-medium">販売商品</h1>
+          <h1 className="py-3 text-3xl font-medium">販売商品</h1>
           <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 mt-5">
             {response.map((product: any) => (
               <div key={product.id}>
