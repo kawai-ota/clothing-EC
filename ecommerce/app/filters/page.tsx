@@ -78,7 +78,7 @@ const Page = (props: FilterProps) => {
                   <div className="relative rounded-lg">
                     <img
                       src={product.images.split(",")[0]}
-                      className="w-[250px] h-[300px] object-cover object-top rounded-lg"
+                      className="w-[250px] h-[250px] object-cover object-top rounded-lg"
                       alt=""
                     />
                   </div>
@@ -89,9 +89,7 @@ const Page = (props: FilterProps) => {
                       </h1>
                       <p className="text-[13px] opacity-60">{product.store}</p>
                     </div>
-                    <span className="px-2 font-medium bg-gray-100 rounded-lg">
-                      ￥{product.price}
-                    </span>
+                    <span className="px-2 font-medium">￥{product.price}</span>
                   </div>
                 </Link>
               </div>
