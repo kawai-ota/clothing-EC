@@ -41,36 +41,40 @@ const AllCartProduct = async (props: AllCartProductProps) => {
   return (
     <div className="mt-14">
       {cartProducts.map((cartProduct) => (
-        <div
-          key={cartProduct?.id}
-          className="flex items-center justify-between w-8/12 mx-auto shadow-lg p-5 rounded-lg mt-6"
-        >
-          <div>
-            <h1 className="text-2xl mb-3">{cartProduct?.title}</h1>
-            <h2 className="mb-2 text-neutral-800 ">
-              値段:{cartProduct?.price}円
-            </h2>
-            <h3 className="text-sm text-neutral-600 mb-2">
-              カテゴリー:{cartProduct?.category}
-            </h3>
-            <h3 className="text-sm text-neutral-600 mb-2">
-              スタイル:{cartProduct?.style}
-            </h3>
-            <h3 className="text-sm text-neutral-600 mb-2">
-              アパレル名:{cartProduct?.store}
-            </h3>
-            <DeleteCart productId={cartProduct?.id} userId={props.userId} />
-          </div>
-          <Link href={`/dashboard/${cartProduct?.id}`}>
-            <div>
-              <img
-                src={cartProduct?.images.split(",")[0]}
-                className="w-[200px] h-[200px] object-cover object-top"
-                alt=""
-              />
+        <>
+          <div
+            key={cartProduct?.id}
+            className="flex justify-between w-8/12 mx-auto shadow-lg p-5 rounded-lg mt-6"
+          >
+            <div className="flex">
+              <Link href={`/dashboard/${cartProduct?.id}`}>
+                <img
+                  src={cartProduct?.images.split(",")[0]}
+                  className="w-[200px] h-[200px] object-cover object-top mr-10 rounded-lg"
+                  alt=""
+                />
+              </Link>
+              <div className="flex flex-col">
+                <h1 className="text-2xl mb-3">{cartProduct?.title}</h1>
+                <h2 className="mb-2 text-neutral-800 ">
+                  ￥{cartProduct?.price}
+                </h2>
+                <h3 className="text-sm text-neutral-600 mb-2">
+                  カテゴリー:{cartProduct?.category}
+                </h3>
+                <h3 className="text-sm text-neutral-600 mb-2">
+                  スタイル:{cartProduct?.style}
+                </h3>
+                <h3 className="text-sm text-neutral-600 mb-2">
+                  アパレル名:{cartProduct?.store}
+                </h3>
+              </div>
             </div>
-          </Link>
-        </div>
+            <div className="mt-0">
+              <DeleteCart productId={cartProduct?.id} userId={props.userId} />
+            </div>
+          </div>
+        </>
       ))}
       <Button allIds={allIds} userId={props.userId} />
     </div>
