@@ -131,7 +131,7 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <div className="flex items-center bg-gray-100 p-2 rounded-lg my-4 py-3">
+        {/* <div className="flex items-center bg-gray-100 p-2 rounded-lg my-4 py-3">
           <input
             type="text"
             className="outline-none w-full bg-transparent ml-2 caret-blue-500 placeholder:font-light placeholder:text-gray-600 text-[15px]"
@@ -141,7 +141,7 @@ const Navbar = () => {
           <button>
             <BiSearch size={20} className="opacity-50" />
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
