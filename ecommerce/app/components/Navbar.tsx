@@ -7,12 +7,13 @@ import { BsChevronCompactUp } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { BsFillPersonFill } from "react-icons/bs";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [showProfile, setShowProfile] = useState<boolean>(false);
   const [showNav, setShowNav] = useState<boolean>(false);
   const { data: session } = useSession();
-  console.log(session?.user);
+  const pathname = usePathname();
 
   const SignOut = () => {
     if (session && session.user) {
@@ -55,23 +56,43 @@ const Navbar = () => {
           <nav className="max-md:hidden">
             <ul className="flex items-center lg:space-x-10 space-x-7 opacity-70 text-[15px]">
               <li>
-                <a href="/" className="py-3 inline-block w-full">
+                <a
+                  href="/"
+                  className={`py-3 inline-block w-full ${
+                    pathname === "/" ? "underline" : "none"
+                  }`}
+                >
                   カタログ
                 </a>
               </li>
               <li>
-                <a href="filters" className="py-3 inline-block w-full">
+                <a
+                  href="filters"
+                  className={`py-3 inline-block w-full ${
+                    pathname === "/filters" ? "underline" : "none"
+                  }`}
+                >
                   フィルター
                 </a>
               </li>
               <li>
-                <a href="contact" className="py-3 inline-block w-full">
+                <a
+                  href="contact"
+                  className={`py-3 inline-block w-full ${
+                    pathname === "/contact" ? "underline" : "none"
+                  }`}
+                >
                   お問い合わせ
                 </a>
               </li>
               {session?.user && (
                 <li>
-                  <a href="mybrands" className="py-3 inline-block w-full">
+                  <a
+                    href="mybrands"
+                    className={`py-3 inline-block w-full ${
+                      pathname === "/mybrands" ? "underline" : "none"
+                    }`}
+                  >
                     マイブランド
                   </a>
                 </li>
@@ -117,16 +138,36 @@ const Navbar = () => {
       >
         <ul className="flex flex-col text-[15px] opacity-75 px-2">
           <li>
-            <a href="/" className="py-3 inline-block w-full">
+            <a
+              href="/"
+              className={`py-3 inline-block w-full ${
+                pathname === "/" ? "underline" : "none"
+              }`}
+            >
               カタログ
             </a>
-            <a href="/filters" className="py-3 inline-block w-full">
+            <a
+              href="/filters"
+              className={`py-3 inline-block w-full ${
+                pathname === "/filters" ? "underline" : "none"
+              }`}
+            >
               フィルター
             </a>
-            <a href="/contact" className="py-3 inline-block w-full">
+            <a
+              href="/contact"
+              className={`py-3 inline-block w-full ${
+                pathname === "/contact" ? "underline" : "none"
+              }`}
+            >
               お問い合わせ
             </a>
-            <a href="/mybrands" className="py-3 inline-block w-full">
+            <a
+              href="/mybrands"
+              className={`py-3 inline-block w-full ${
+                pathname === "/mybrands" ? "underline" : "none"
+              }`}
+            >
               マイブランド
             </a>
           </li>
