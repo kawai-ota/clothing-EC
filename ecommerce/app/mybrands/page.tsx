@@ -62,7 +62,7 @@ const page = async (props: MyBrandsProps) => {
                 className="absolute top-0 right-0"
                 href={`/edit/${product.id}`}
               >
-                <span className="absolute top-0 right-0 p-2 bg-green-600 rounded-full text-white cursor-pointer mr-2 mt-2">
+                <span className="absolute top-0 right-0 p-2 bg-[#31ACA3] rounded-full text-white cursor-pointer mr-2 mt-2">
                   <AiTwotoneEdit size={24} />
                 </span>
               </Link>
