@@ -35,31 +35,34 @@ const page = async (props: MyBrandsProps) => {
         {allmyproduct.map((product) => (
           <div
             key={product.id}
-            className="relative flex items-center justify-between w-8/12 px-6 mx-auto shadow-lg  p-5 rounded-lg mt-10"
+            className="relative flex justify-between w-8/12 px-6 mx-auto shadow-lg  p-5 rounded-lg mt-10"
           >
-            <div>
-              <h1 className="mb-3">{product.title}</h1>
-              <h1 className="mb-3"> 値段:{product.price}円</h1>
-              <h1 className="mb-3"> カテゴリー:{product.category}</h1>
-              <h1 className="mb-3"> スタイル:{product.style}</h1>
-              <h1 className="mb-3"> アパレル名:{product.store}</h1>
-              <DeleteProduct productId={product.id} userId={product.userId} />
-            </div>
-            <Link href={`/dashboard/${product.id}`}>
-              <div>
-                <img
-                  className="w-[200px] h-[200px] object-cover object-top"
-                  src={product.images.split(",")[0]}
-                  alt=""
-                />
+            <div className="flex">
+              <Link href={`/dashboard/${product.id}`}>
+                <div>
+                  <img
+                    className="w-[200px] h-[200px] object-cover object-top rounded-lg"
+                    src={product.images.split(",")[0]}
+                    alt=""
+                  />
+                </div>
+              </Link>
+              <div className="ml-10">
+                <h1 className="text-2xl mb-3">{product.title}</h1>
+                <h1 className="mb-3"> ￥{product.price}</h1>
+                <h1 className="mb-3"> カテゴリー:{product.category}</h1>
+                <h1 className="mb-3"> スタイル:{product.style}</h1>
+                <h1 className="mb-3"> アパレル名:{product.store}</h1>
+                <DeleteProduct productId={product.id} userId={product.userId} />
               </div>
-            </Link>
+            </div>
+
             {session?.user.id === product.userId && (
               <Link
                 className="absolute top-0 right-0"
                 href={`/edit/${product.id}`}
               >
-                <span className="absolute top-0 right-0 p-2 bg-green-600 rounded-full text-white cursor-pointer">
+                <span className="absolute top-0 right-0 p-2 bg-green-600 rounded-full text-white cursor-pointer mr-2 mt-2">
                   <AiTwotoneEdit size={24} />
                 </span>
               </Link>
