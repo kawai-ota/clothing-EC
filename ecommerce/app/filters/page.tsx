@@ -17,7 +17,7 @@ const Page = (props: FilterProps) => {
     min: 0,
     max: 0,
   });
-
+  // const [isChevronRotated, setIsChevronRotated] = useState(false);
   const [response, setResponse] = useState<any[]>([]);
 
   useEffect(() => {
@@ -49,6 +49,10 @@ const Page = (props: FilterProps) => {
     fetchData();
   }, [selectedCategories, selectedSize, selectedHexValues, price]);
 
+  // const handleCategory = () => {
+  //   return setIsChevronRotated(!isChevronRotated);
+  // };
+
   return (
     <div className="px-5 max-w-[1280px] mb-[100px] mx-auto">
       <div>
@@ -75,27 +79,44 @@ const Page = (props: FilterProps) => {
           <div className="flex flex-row">
             <div className="text-gray-600">絞り込み:</div>
             <div className="ml-5">
-              <span className="flex flex-row items-center text-gray-600 cursor-pointer">
+              <span className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline">
                 カテゴリー
-                <BiChevronDown className="ml-2" />
+                <div
+                  // onClick={handleCategory}
+                  className="ml-2"
+                >
+                  <BiChevronDown className="transform" />
+                </div>
               </span>
             </div>
             <div className="ml-5">
-              <span className="flex flex-row items-center text-gray-600 cursor-pointer">
+              <span className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline">
                 カラー
-                <BiChevronDown className="ml-2" />
+                <div
+                  // onClick={handleCategory}
+                  className="ml-2"
+                >
+                  <BiChevronDown className="transform" />
+                </div>
               </span>
             </div>
             <div className="ml-5">
-              <span className="flex flex-row items-center text-gray-600 cursor-pointer">
+              <span className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline">
                 価格
-                <BiChevronDown className="ml-2" />
+                <div
+                  // onClick={handleCategory}
+                  className="ml-2"
+                >
+                  <BiChevronDown className="transform" />
+                </div>
               </span>
             </div>
             <div className="ml-5">
-              <span className="flex flex-row items-center text-gray-600 cursor-pointer">
+              <span className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline">
                 サイズ
-                <BiChevronDown className="ml-2" />
+                <div className="ml-2">
+                  <BiChevronDown className="transform" />
+                </div>
               </span>
             </div>
           </div>
