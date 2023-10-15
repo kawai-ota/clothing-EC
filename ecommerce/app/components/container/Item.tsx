@@ -17,10 +17,10 @@ const Item = async (props: ItemProps) => {
         {products.map((product) => (
           <div key={product.id}>
             <Link href={`/dashboard/${product.id}`}>
-              <div className="relative rounded-lg">
+              <div className="relative rounded-lg group">
                 <img
                   src={product.images.split(",")[0]}
-                  className="w-[250px] h-[250px] object-cover object-top rounded-lg"
+                  className="w-[250px] h-[250px] object-cover object-top rounded-lg transform group-hover:translate-y-[-10px] transition-transform  border-2 border-transparent group-hover:border-[#31ACA3] transition-border duration-300"
                   alt=""
                 />
               </div>
