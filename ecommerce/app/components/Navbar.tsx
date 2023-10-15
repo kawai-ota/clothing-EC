@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CiShoppingCart } from "react-icons/ci";
 import { BsChevronCompactUp } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
+import { BsFillPersonFill } from "react-icons/bs";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
@@ -83,11 +84,7 @@ const Navbar = () => {
           className="flex items-center space-x-4"
         >
           <div className="relative cursor-pointer">
-            <img
-              src="user.jpg"
-              className="w-[35px] h-[35px] rounded-full object-cover"
-              alt=""
-            />
+            <BsFillPersonFill size={35} />
             <div
               className={`absolute bg-white z-[2] rounded-lg shadow-lg ${
                 showProfile ? "" : "hidden"
