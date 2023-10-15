@@ -18,8 +18,8 @@ const ImageGallery = ({ imageUrls }: ImageProps) => {
               onClick={() => setSelectedImage(index)}
               className={`w-[70px] h-[70px] rounded-lg mb-3 p-1 object-cover object-top ${
                 selectedImage === index
-                  ? "border-[1px] border-purple-500"
-                  : "border-[1px] border-purple-200"
+                  ? "border-[1px] border-[#3EBCB5]"
+                  : "border-[1px] border-[#6ec0bc]"
               }`}
               src={url}
               alt={`Image${index + 1}`}

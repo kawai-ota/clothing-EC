@@ -9,11 +9,6 @@ const Container = (props: ContainerProps) => {
   return (
     <div className="mb-[200px]">
       <div className="flex">
-        {/* <Link href="/filters"> */}
-        {/* <div>
-          <Filter />
-        </div> */}
-        {/* </Link> */}
         <div className="px-20">
           <Item />
         </div>
