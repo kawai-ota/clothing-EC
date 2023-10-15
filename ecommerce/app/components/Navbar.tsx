@@ -58,7 +58,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="/"
-                  className={`py-3 inline-block w-full ${
+                  className={`py-3 inline-block w-full hover:underline ${
                     pathname === "/" ? "underline" : "none"
                   }`}
                 >
@@ -68,7 +68,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="filters"
-                  className={`py-3 inline-block w-full ${
+                  className={`py-3 inline-block w-full hover:underline ${
                     pathname === "/filters" ? "underline" : "none"
                   }`}
                 >
@@ -78,7 +78,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="contact"
-                  className={`py-3 inline-block w-full ${
+                  className={`py-3 inline-block w-full hover:underline ${
                     pathname === "/contact" ? "underline" : "none"
                   }`}
                 >
@@ -89,7 +89,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href="mybrands"
-                    className={`py-3 inline-block w-full ${
+                    className={`py-3 inline-block w-full hover:underline ${
                       pathname === "/mybrands" ? "underline" : "none"
                     }`}
                   >
@@ -140,7 +140,7 @@ const Navbar = () => {
           <li>
             <a
               href="/"
-              className={`py-3 inline-block w-full ${
+              className={`py-3 inline-block w-full hover:underline ${
                 pathname === "/" ? "underline" : "none"
               }`}
             >
@@ -148,7 +148,7 @@ const Navbar = () => {
             </a>
             <a
               href="/filters"
-              className={`py-3 inline-block w-full ${
+              className={`py-3 inline-block w-full hover:underline ${
                 pathname === "/filters" ? "underline" : "none"
               }`}
             >
@@ -156,7 +156,7 @@ const Navbar = () => {
             </a>
             <a
               href="/contact"
-              className={`py-3 inline-block w-full ${
+              className={`py-3 inline-block w-full hover:underline ${
                 pathname === "/contact" ? "underline" : "none"
               }`}
             >
@@ -164,7 +164,7 @@ const Navbar = () => {
             </a>
             <a
               href="/mybrands"
-              className={`py-3 inline-block w-full ${
+              className={`py-3 inline-block w-full hover:underline ${
                 pathname === "/mybrands" ? "underline" : "none"
               }`}
             >
