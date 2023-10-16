@@ -9,15 +9,23 @@ interface CommentProps {
 }
 
 const Comment = (props: CommentProps) => {
+  const scrollToReviews = () => {
+    const reviewSection = document.getElementById("review-section");
+    if (reviewSection) {
+      reviewSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <div className="flex items-center mt-4">
         <ReactStars value={props.rating} size={20} />
         <span className="ml-2">
-          <span className="opacity-70 text-sm underline hover:no-underline cursor-pointer">
-            <Link href="/allreview">
-              [{props.numberComments}件のレビューを見る]
-            </Link>
+          <span
+            className="opacity-70 text-sm underline hover:no-underline cursor-pointer"
+            onClick={scrollToReviews}
+          >
+            [{props.numberComments}件のレビューを見る]
           </span>
         </span>
       </div>

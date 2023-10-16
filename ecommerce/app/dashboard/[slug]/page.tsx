@@ -100,7 +100,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         )}
       </div>
       <div className="mt-20 mb-20">
-        <div className="flex items-center space-x-5 mb-10">
+        <div id="review-section" className="flex items-center space-x-5 mb-10">
           <span className="w-[5px] h-[30px] bg-[#3EBCB5] rounded-full inline-block" />
           <span className="font-medium text-xl">お客様のレビュー</span>
         </div>
