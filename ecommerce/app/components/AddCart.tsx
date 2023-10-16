@@ -37,12 +37,12 @@ const AddCart = ({ productId }: AddProps) => {
   return (
     <div
       onClick={handleCart}
-      className="flex items-center space-x-4 bg-[#3EBCB5] text-white px-6 p-2 rounded-full cursor-pointer"
+      className="flex items-center space-x-4 bg-[#3EBCB5] hover:bg-[#42c9c3] text-white px-6 p-2 rounded-full cursor-pointer"
     >
       <span>
         <CiShoppingCart size={24} />
       </span>
-      <span className="text-wm">カートに追加する</span>
+      <span className="text-wm]">カートに追加する</span>
     </div>
   );
 };

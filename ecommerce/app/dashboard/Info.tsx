@@ -95,7 +95,7 @@ const Info: React.FC<InfoProps> = ({
             backgroundColor: color,
             display: "inline-block",
           }}
-        ></div>
+        />
       ))}
       <div className="flex items-center mt-7 space-x-10">
         <AddCart productId={id} />
