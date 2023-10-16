@@ -58,31 +58,6 @@ const Info: React.FC<InfoProps> = ({
   };
   return (
     <div className="relative info">
-      <h1 className="text-2xl font-semibold">{title}</h1>
-      <h3 className="text-sm text-neutral-500">{store}</h3>
-      <div className="flex items-center space-x-12 mt-4">
-        <ReactStars value={rating} size={20} />
-        <span className="flex items-start space-x-3">
-          <FaRegCommentDots size={22} />
-          <span className="opacity-70 text-sm">{numberComments}のコメント</span>
-        </span>
-      </div>
-      <h3 className="font-medium mt-8 mb-3 text-[14px]">サイズを選択</h3>
-      <ul className="flex space-x-5">
-        {sizes.map((size, index) => (
-          <li
-            key={index}
-            className={`p-1 px-2 border-[1px] rounded-lg cursor-pointer inline-block text-center ${
-              selectedSizes.includes(size)
-                ? "bg-black text-white"
-                : "bg-white text-black"
-            }`}
-            onClick={() => handleSelectSize(size)}
-          >
-            {size}
-          </li>
-        ))}
-      </ul>
       <h3 className="font-medium mt-8 mb-3 text-[14px]">
         カラーバリエーション
       </h3>
@@ -97,6 +72,27 @@ const Info: React.FC<InfoProps> = ({
           }}
         />
       ))}
+      <h3 className="font-medium mt-8 mb-3 text-[14px]">サイズを選択</h3>
+      <ul className="flex space-x-5">
+        {sizes.map((size, index) => (
+          <li
+            key={index}
+            className={`p-1 px-2 border-[1px] rounded-lg cursor-pointer inline-block text-center ${
+              selectedSizes.includes(size)
+                ? "bg-black text-white"
+                : "bg-white text-black"
+            }`}
+            onClick={() => handleSelectSize(size)}
+            style={{
+              borderRadius: "50%",
+              display: "inline-block",
+            }}
+          >
+            {size}
+          </li>
+        ))}
+      </ul>
+      <h1 className="text-2xl mt-10">￥{price}</h1>
       <div className="flex items-center mt-7 space-x-10">
         <AddCart productId={id} />
       </div>
