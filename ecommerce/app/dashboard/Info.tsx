@@ -80,7 +80,7 @@ const Info: React.FC<InfoProps> = ({
             }`}
             onClick={() => handleSelectSize(size)}
             style={{
-              borderRadius: "50%",
+              borderRadius: "100%",
               display: "inline-block",
             }}
           >
