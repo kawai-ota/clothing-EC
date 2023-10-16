@@ -25,8 +25,6 @@ interface InfoProps {
   price: number;
   images: string;
   userId: number;
-  rating: number;
-  numberComments: number;
 }
 
 const Info: React.FC<InfoProps> = ({
@@ -38,8 +36,6 @@ const Info: React.FC<InfoProps> = ({
   size,
   userId,
   store,
-  rating,
-  numberComments,
 }) => {
   const colors = color.split(",");
   const sizes = size.split(",");

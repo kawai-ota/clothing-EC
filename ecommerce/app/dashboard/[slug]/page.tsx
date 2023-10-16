@@ -7,6 +7,8 @@ import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import ReviewSection from "../ReviewSection";
 import Navbar from "@/app/components/Navbar";
+import ReactStars from "react-rating-star-with-type";
+import Comment from "../Comment";
 
 type dashboardProps = {};
 
@@ -40,14 +42,20 @@ export default async function Page({ params }: { params: { slug: string } }) {
     <div className="max-w-[1280px] mx-auto px-5 py-5">
       <Navbar />
       <hr />
+      <div className="flex flex-col space-y-2 mt-4">
+        {product && (
+          <div className="flex flex-row items-center">
+            <h1 className="text-2xl font-semibold mr-2">{product.title}</h1>
+            <span className="text-2xl mr-2">/</span>
+            <h2 className="text-2xl font-medium">{product.store}</h2>
+          </div>
+        )}
+        <Comment rating={averageRating} numberComments={allReview.length} />
+      </div>
       {product && (
         <div className="grid grid-cols-2 mt-10 gap-14">
           {urlString && <ImageGallery imageUrls={urlString} />}
-          <Info
-            {...product}
-            rating={averageRating}
-            numberComments={allReview.length}
-          />
+          <Info {...product} />
         </div>
       )}
       <div className="mb-20 mt-20">
