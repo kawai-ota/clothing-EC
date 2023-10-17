@@ -2,12 +2,14 @@ import React from "react";
 import prisma from "@/app/lib/prismadb";
 import ImageGallery from "../ImageGallery";
 import Info from "../Info";
+import Slide from "../../components/Slide";
 import Review from "@/app/components/Review";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import ReviewSection from "../ReviewSection";
 import Navbar from "@/app/components/Navbar";
 import Comment from "../Comment";
+import { BiPlus } from "react-icons/bi";
 
 type dashboardProps = {};
 
@@ -52,58 +54,54 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <Comment rating={averageRating} numberComments={allReview.length} />
       </div>
       {product && (
-        <div className="grid grid-cols-2 mt-10 gap-14">
+        <div className="grid lg:grid-cols-2 grid-cols-1 mt-10 mb-10 gap-14">
           {urlString && <ImageGallery imageUrls={urlString} />}
           <Info {...product} />
         </div>
       )}
-      <div className="mb-20 mt-20">
-        <div className="flex items-center space-x-5 mb-10">
-          <span className="w-[5px] h-[30px] bg-[#3EBCB5] rounded-full inline-block" />
-          <span className="font-medium text-xl">商品説明</span>
-        </div>
-        {product && (
-          <div className="grid grid-cols-2">
-            <div className="flex flex-col justify-center">
-              <div className="grid grid-cols-3 gap-5 mb-5">
-                <div>
-                  <h3 className="font-medium">カテゴリー</h3>
-                  <p className="text-sm">{product.category}</p>
-                </div>
-                <div className="">
-                  <h3 className="font-medium">ファッション</h3>
-                  <p className="text-sm">{product.style}</p>
-                </div>
-                <div className="">
-                  <h3 className="font-medium">ブランド名</h3>
-                  <p className="text-sm">{product.store}</p>
-                </div>
-              </div>
-              <div
-                style={{ borderColor: `{${product.color.split(",").pop()}}` }}
-                className="leading-6 text-sm text-neutral-700 h-[200px] border-[1px] rounded-md p-4 overflow-scroll"
-                dangerouslySetInnerHTML={{ __html: product.description }}
-              />
+      <div className="grid lg:grid-cols-2 grid-cols-1 lg:mt-20">
+        <div>
+          <div className="flex items-center space-x-5 mb-10">
+            <span className="w-[5px] h-[30px] bg-[#3EBCB5] rounded-full inline-block" />
+            <span className="font-medium text-xl">この商品について</span>
+          </div>
+          <div>
+            <hr className="w-9/12 my-3" />
+            <div className="flex flex-row justify-between w-9/12 opacity-70 cursor-pointer">
+              <span className="font-medium">概要</span>
+              <BiPlus size={24} />
             </div>
-            <div className="flex justify-end relative items-center">
+          </div>
+          <div>
+            <hr className="w-9/12 my-3" />
+            <div className="flex flex-row justify-between w-9/12 opacity-70 cursor-pointer">
+              <span className="font-medium">商品詳細</span>
+              <BiPlus size={24} />
+            </div>
+          </div>
+        </div>
+        <div className="lg:mt-0 mt-10">
+          <div className="flex flex-col items-center space-x-5 mb-10">
+            <div className="flex flex-row mb-5">
+              <span className="w-[5px] h-[30px] bg-[#3EBCB5] rounded-full inline-block mr-5" />
+              <span className="font-medium text-xl">スナップ</span>
+            </div>
+            {product && (
               <img
                 src={product.images.split(",").pop()}
                 className="max-h-[300px] w-10/12 rounded-lg object-contain"
                 alt=""
               />
-              <span className="text-sm absolute bottom-2 right-2 text-white font-medium">
-                {product.title}
-              </span>
-            </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
       <div className="mt-20 mb-20">
         <div id="review-section" className="flex items-center space-x-5 mb-10">
           <span className="w-[5px] h-[30px] bg-[#3EBCB5] rounded-full inline-block" />
           <span className="font-medium text-xl">お客様のレビュー</span>
         </div>
-        <div className="grid grid-cols-2">
+        <div className="grid lg:grid-cols-2 grid-cols-1">
           <div>
             {allReview.map((review, index) => (
               <div key={review.id} className="mb-5">
