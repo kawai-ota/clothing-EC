@@ -15,7 +15,7 @@ type SlideTypeProps = {
   userId?: number;
 };
 
-const Slide = (props: SlideTypeProps | null) => {
+const Slide = (props: SlideTypeProps) => {
   return (
     <div>
       <div className="flex flex-col items-center space-x-5 mb-10">
@@ -24,7 +24,7 @@ const Slide = (props: SlideTypeProps | null) => {
           <span className="font-medium text-xl">スナップ</span>
         </div>
         <img
-          src={props?.images?.split(",").pop()}
+          src={props.images?.split(",").pop()}
           className="max-h-[300px] w-10/12 rounded-lg object-contain"
           alt=""
         />
