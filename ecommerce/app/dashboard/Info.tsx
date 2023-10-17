@@ -207,7 +207,7 @@ const Info: React.FC<InfoProps> = ({
       </div>
       {currentUserId === userId && (
         <Link href={`/edit/${id}`}>
-          <span className="absolute top-0 right-0 p-2 bg-green-600 rounded-full text-white cursor-pointer">
+          <span className="absolute top-0 right-0 p-2 bg-[#3EBCB5] rounded-full text-white cursor-pointer">
             <AiTwotoneEdit />
           </span>
         </Link>

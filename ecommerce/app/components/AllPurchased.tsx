@@ -44,8 +44,8 @@ const AllPurchased = async ({ userId }: AllPurchasedProps) => {
             <h3 className="text-sm text-neutral-600 mb-2">
               アパレル名:{cartProduct?.store}
             </h3>
-            <p className="text-green-600">
-              購入 <BsCheck2All size={20} className="text-green-600" />
+            <p className="text-[#3EBCB5]">
+              購入 <BsCheck2All size={20} className="text-[#3EBCB5]" />
             </p>
           </div>
           <Link href={`/dashboard/${cartProduct?.id}`}>
