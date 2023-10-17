@@ -133,7 +133,7 @@ const Info: React.FC<InfoProps> = ({
         </div>
         <div
           className={`transition-max-h duration-300 ${
-            isPaymentAccordionOpen ? "max-h-screen" : "max-h-0"
+            isPaymentAccordionOpen ? "max-h-screen pt-2" : "max-h-0"
           } overflow-hidden`}
         >
           <AboutPayment />
@@ -155,7 +155,7 @@ const Info: React.FC<InfoProps> = ({
         </div>
         <div
           className={`transition-max-h duration-300 ${
-            isSizeAccordionOpen ? "max-h-screen" : "max-h-0"
+            isSizeAccordionOpen ? "max-h-screen pt-2" : "max-h-0"
           } overflow-hidden`}
         >
           <AboutSize />
@@ -177,7 +177,7 @@ const Info: React.FC<InfoProps> = ({
         </div>
         <div
           className={`transition-max-h duration-300 ${
-            isShippingAccordionOpen ? "max-h-screen" : "max-h-0"
+            isShippingAccordionOpen ? "max-h-screen pt-2" : "max-h-0"
           } overflow-hidden`}
         >
           <AboutShip />
@@ -199,7 +199,7 @@ const Info: React.FC<InfoProps> = ({
         </div>
         <div
           className={`transition-max-h duration-300 ${
-            isReturnAccordionOpen ? "max-h-screen" : "max-h-0"
+            isReturnAccordionOpen ? "max-h-screen pt-2" : "max-h-0"
           } overflow-hidden`}
         >
           <AboutReturn />

@@ -16,7 +16,7 @@ const ImageGallery = ({ imageUrls }: ImageProps) => {
           <div key={index} className="image relative rounded-lg">
             <img
               onClick={() => setSelectedImage(index)}
-              className={`w-[70px] h-[70px] rounded-lg mb-3 p-1 object-cover object-top ${
+              className={`w-[70px] h-[70px] rounded-lg mb-3 p-1 object-cover object-top cursor-pointer ${
                 selectedImage === index
                   ? "border-[1px] border-[#3EBCB5]"
                   : "border-[1px] border-[#6ec0bc]"
