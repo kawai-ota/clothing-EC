@@ -58,7 +58,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
       )}
       <div className="grid lg:grid-cols-2 grid-cols-1 lg:mt-20">
-        <AboutGoods />
+        <AboutGoods {...product} />
         <Slide {...product} />
       </div>
       <div className="mt-20 mb-20">

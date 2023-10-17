@@ -3,11 +3,25 @@ import React, { useState } from "react";
 import { BiPlus } from "react-icons/bi";
 import { FiMinus } from "react-icons/fi";
 
-type AboutGoodsProps = {};
+type AboutGoodsProps = {
+  id?: number;
+  title?: string;
+  description?: string;
+  category?: string;
+  style?: string;
+  store?: string;
+  size?: string;
+  inventory?: number;
+  color?: string;
+  price?: number;
+  images?: string;
+  userId?: number;
+};
 
 const AboutGoods = (props: AboutGoodsProps) => {
   const [outline, setOutline] = useState(false);
   const [detail, setDetail] = useState(false);
+  const descriptionHtml = props.description || "";
 
   const handleOutline = () => {
     setOutline(!outline);
@@ -37,7 +51,22 @@ const AboutGoods = (props: AboutGoodsProps) => {
             outline ? "max-h-screen pt-4" : "max-h-0"
           } overflow-hidden`}
         >
-          コンポーネントまたはプロパティ
+          <div className="flex flex-col justify-center w-9/12">
+            <div className="grid grid-cols-3 gap-5 mb-5">
+              <div>
+                <h3 className="font-medium">カテゴリー</h3>
+                <p className="text-sm">{props.category}</p>
+              </div>
+              <div className="">
+                <h3 className="font-medium">ファッション</h3>
+                <p className="text-sm">{props.style}</p>
+              </div>
+              <div className="">
+                <h3 className="font-medium">ブランド名</h3>
+                <p className="text-sm">{props.store}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div>
@@ -54,7 +83,10 @@ const AboutGoods = (props: AboutGoodsProps) => {
             detail ? "max-h-screen pt-4" : "max-h-0"
           } overflow-hidden`}
         >
-          コンポーネントまたはプロパティ
+          <div
+            className="leading-6 text-sm text-neutral-700 h-[200px] rounded-md p-2 w-9/12"
+            dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+          />
         </div>
       </div>
     </div>

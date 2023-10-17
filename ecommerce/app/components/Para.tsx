@@ -15,7 +15,7 @@ const Para: React.FC<ParaProps> = ({ setDescription, description }) => {
     editorProps: {
       attributes: {
         class:
-          "prose w-full focus:outline-none leading-5 prose-a:text-pink-600 prose-a:font-semibold prose-a:no-underline",
+          "prose w-full focus:outline-none leading-5 prose-a:text--600 prose-a:font-semibold prose-a:no-underline",
       },
     },
 
