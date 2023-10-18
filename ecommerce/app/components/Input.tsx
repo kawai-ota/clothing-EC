@@ -23,7 +23,7 @@ const Input: React.FC<InputProps> = ({
   disabled,
 }) => {
   return (
-    <div>
+    <div className="flex flex-col">
       <label htmlFor={id} className="mb-2">
         {label}
       </label>
@@ -34,7 +34,7 @@ const Input: React.FC<InputProps> = ({
         disabled={disabled}
         {...register(id, { required: true })}
         className={clsx(
-          `p-2 border-gray-300 border-[1px] rounded-lg w-[300px] mb-4 focus:outline-none focus:border-gray-600 text-black`,
+          `p-2 border-gray-300 border-[2px] rounded-lg w-[300px] mb-4 focus:outline-none focus:border-[#3EBCB5] text-black`,
           errors[id] && "focus:ring-rose-500",
           disabled && ""
         )}

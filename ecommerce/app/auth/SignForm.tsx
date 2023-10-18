@@ -79,6 +79,7 @@ const SignForm = () => {
               />
             </>
           )}
+          {variant === "LOGIN" && <h1 className="text-xl">ログイン</h1>}
           <Input
             id="email"
             label="メールアドレス"
