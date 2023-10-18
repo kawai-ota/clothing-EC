@@ -19,7 +19,7 @@ const Button = ({ allIds, userId }: ButtonProps) => {
     <div className="flex items-center justify-center mt-20 cursor-pointer">
       <span
         onClick={onCheckout}
-        className="px-10 p-2 text-white bg-[#3EBCB5] rounded-full"
+        className="px-10 p-2 text-white bg-[#3EBCB5] hover:bg-[#46cdc6] rounded-full"
       >
         購入する
       </span>

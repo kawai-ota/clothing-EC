@@ -40,12 +40,12 @@ const Contact = (props: ContactProps) => {
             className="w-full h-[150px] border-[1px] rounded-lg focus:border-[#31ACA3] px-3 focus:border-2 outline-none"
             placeholder="コメント"
           />
-          <button className="bg-[#3EBCB5] w-[150px] h-[50px] mt-10 rounded-lg text-white font-bold">
+          <button className="bg-[#3EBCB5] hover:bg-[#46cdc6] w-[150px] h-[50px] mt-10 rounded-lg text-white font-bold">
             <span className="">送信する</span>
           </button>
         </div>
         <div className="mt-10 text-2xl cursor-pointer" onClick={handleContact}>
-          <GrMail size={120} className="text-[#3EBCB5]" />
+          <GrMail size={120} className="text-[#3EBCB5] " />
         </div>
       </div>
     </>
