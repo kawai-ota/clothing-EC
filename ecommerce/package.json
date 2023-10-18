@@ -29,6 +29,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.46.1",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
     "react-pick-color": "^2.0.0",
     "react-rating-star-with-type": "^1.2.1",
