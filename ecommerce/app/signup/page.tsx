@@ -1,5 +1,5 @@
 import React from "react";
-import SignForm from "./SignForm";
+import SignForm from "../auth/SignForm";
 
 type SignUpProps = {};
 
