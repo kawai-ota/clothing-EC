@@ -51,7 +51,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between py-12 relative">
         <div className="flex items-center md:space-x-10 lg:space-x-20">
           <div className="font-semibold text-2xl">
-            <a href="/">PAM</a>
+            <Link href="/">PAM</Link>
           </div>
           <nav className="max-md:hidden">
             <ul className="flex items-center lg:space-x-10 space-x-7 opacity-70 text-[15px]">
@@ -67,7 +67,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="filters"
+                  href="/filters"
                   className={`py-3 inline-block w-full hover:underline ${
                     pathname === "/filters" ? "underline" : "none"
                   }`}
@@ -77,7 +77,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="contact"
+                  href="/contact"
                   className={`py-3 inline-block w-full hover:underline ${
                     pathname === "/contact" ? "underline" : "none"
                   }`}
@@ -88,7 +88,7 @@ const Navbar = () => {
               {session?.user && (
                 <li>
                   <Link
-                    href="mybrands"
+                    href="/mybrands"
                     className={`py-3 inline-block w-full hover:underline ${
                       pathname === "/mybrands" ? "underline" : "none"
                     }`}
@@ -162,14 +162,14 @@ const Navbar = () => {
             >
               お問い合わせ
             </Link>
-            <a
+            <Link
               href="/mybrands"
               className={`py-3 inline-block w-full hover:underline ${
                 pathname === "/mybrands" ? "underline" : "none"
               }`}
             >
               マイブランド
-            </a>
+            </Link>
           </li>
         </ul>
         {/* <div className="flex items-center bg-gray-100 p-2 rounded-lg my-4 py-3">
