@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { signIn, signOut, useSession } from "next-auth/react";
 import Navbar from "../components/Navbar";
 import { useRouter } from "next/navigation";
 import Size from "../components/Size";
@@ -145,7 +144,7 @@ const Edit = ({
             </label>
             <input
               type="text"
-              className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+              className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
               name="category"
               value={formData.category}
               onChange={handleChange}
@@ -157,7 +156,7 @@ const Edit = ({
             </label>
             <input
               type="text"
-              className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+              className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
               name="style"
               value={formData.style}
               onChange={handleChange}
@@ -169,7 +168,7 @@ const Edit = ({
             </label>
             <input
               type="text"
-              className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+              className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
               name="store"
               value={formData.store}
               onChange={handleChange}
@@ -181,7 +180,7 @@ const Edit = ({
             </label>
             <input
               type="text"
-              className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+              className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
               name="size"
               value={formData.size}
               onChange={handleChange}
@@ -194,7 +193,7 @@ const Edit = ({
             </label>
             <input
               type="number"
-              className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+              className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
               name="inventory"
               value={formData.inventory}
               onChange={handlePriceChange}
@@ -206,7 +205,7 @@ const Edit = ({
             </label>
             <input
               type="number"
-              className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+              className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
               name="price"
               value={formData.price}
               onChange={handlePriceChange}
@@ -219,7 +218,7 @@ const Edit = ({
               </label>
               <input
                 type="text"
-                className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+                className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
                 name="color"
                 value={formData.color}
                 onChange={handleChange}

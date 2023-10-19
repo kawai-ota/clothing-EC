@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Navbar from "../components/Navbar";
 import { useRouter } from "next/navigation";
 import Size from "../components/Size";

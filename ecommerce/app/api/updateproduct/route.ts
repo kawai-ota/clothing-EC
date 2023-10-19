@@ -36,7 +36,6 @@ export async function PATCH(request: Request) {
         color,
         price,
         images,
-        userId,
       },
     });
     return NextResponse.json(updateProduct);
