@@ -29,7 +29,7 @@ const Navbar = () => {
             ログアウト
           </li>
           <li className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer">
-            <a href="/addproduct">ブランドの出品</a>
+            <Link href="/addproduct">ブランドの出品</Link>
           </li>
         </ul>
       );
@@ -56,45 +56,45 @@ const Navbar = () => {
           <nav className="max-md:hidden">
             <ul className="flex items-center lg:space-x-10 space-x-7 opacity-70 text-[15px]">
               <li>
-                <a
+                <Link
                   href="/"
                   className={`py-3 inline-block w-full hover:underline ${
                     pathname === "/" ? "underline" : "none"
                   }`}
                 >
                   カタログ
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="filters"
                   className={`py-3 inline-block w-full hover:underline ${
                     pathname === "/filters" ? "underline" : "none"
                   }`}
                 >
                   フィルター
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="contact"
                   className={`py-3 inline-block w-full hover:underline ${
                     pathname === "/contact" ? "underline" : "none"
                   }`}
                 >
                   お問い合わせ
-                </a>
+                </Link>
               </li>
               {session?.user && (
                 <li>
-                  <a
+                  <Link
                     href="mybrands"
                     className={`py-3 inline-block w-full hover:underline ${
                       pathname === "/mybrands" ? "underline" : "none"
                     }`}
                   >
                     マイブランド
-                  </a>
+                  </Link>
                 </li>
               )}
             </ul>
@@ -138,30 +138,30 @@ const Navbar = () => {
       >
         <ul className="flex flex-col text-[15px] opacity-75 px-2">
           <li>
-            <a
+            <Link
               href="/"
               className={`py-3 inline-block w-full hover:underline ${
                 pathname === "/" ? "underline" : "none"
               }`}
             >
               カタログ
-            </a>
-            <a
+            </Link>
+            <Link
               href="/filters"
               className={`py-3 inline-block w-full hover:underline ${
                 pathname === "/filters" ? "underline" : "none"
               }`}
             >
               フィルター
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className={`py-3 inline-block w-full hover:underline ${
                 pathname === "/contact" ? "underline" : "none"
               }`}
             >
               お問い合わせ
-            </a>
+            </Link>
             <a
               href="/mybrands"
               className={`py-3 inline-block w-full hover:underline ${
