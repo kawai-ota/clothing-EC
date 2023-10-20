@@ -22,7 +22,7 @@ const Page = (props: FilterProps) => {
     max: 0,
   });
   const [response, setResponse] = useState<any[]>([]);
-  const [isFilterCategory, setIsFilterCategory] = useState(false);
+  const [isFilterCategory, setIsFilterCategory] = useState<boolean>(false);
   const [isFilterColor, setIsFilterColor] = useState(false);
   const [isFilterPrice, setIsFilterPrice] = useState(false);
   const [isFilterSize, setIsFilterSize] = useState(false);
@@ -164,7 +164,10 @@ const Page = (props: FilterProps) => {
                   ref={categoryModalRef}
                 >
                   <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
-                    <FilterCategory />
+                    <FilterCategory
+                      setIsFilterCategory={setIsFilterCategory}
+                      isFilterCategory={isFilterCategory}
+                    />
                   </div>
                 </div>
               )}
@@ -187,7 +190,10 @@ const Page = (props: FilterProps) => {
                   ref={colorModalRef}
                 >
                   <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
-                    <FilterColor />
+                    <FilterColor
+                      setIsFilterColor={setIsFilterColor}
+                      isFilterColor={isFilterColor}
+                    />
                   </div>
                 </div>
               )}
@@ -211,7 +217,10 @@ const Page = (props: FilterProps) => {
                   ref={priceModalRef}
                 >
                   <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
-                    <FilterPrice />
+                    <FilterPrice
+                      setIsFilterPrice={setIsFilterPrice}
+                      isFilterPrice={isFilterPrice}
+                    />
                   </div>
                 </div>
               )}
@@ -234,7 +243,10 @@ const Page = (props: FilterProps) => {
                   ref={sizeModalRef}
                 >
                   <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
-                    <FilterSize />
+                    <FilterSize
+                      setIsFilterSize={setIsFilterSize}
+                      isFilterSize={isFilterSize}
+                    />
                   </div>
                 </div>
               )}
