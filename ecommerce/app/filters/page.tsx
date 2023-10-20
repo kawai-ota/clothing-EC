@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import FilterCategory from "../components/FilterCategory";
 import FilterColor from "../components/FIlterColor";
@@ -21,8 +21,74 @@ const Page = (props: FilterProps) => {
     min: 0,
     max: 0,
   });
-  // const [isChevronRotated, setIsChevronRotated] = useState(false);
   const [response, setResponse] = useState<any[]>([]);
+  const [isFilterCategory, setIsFilterCategory] = useState(false);
+  const [isFilterColor, setIsFilterColor] = useState(false);
+  const [isFilterPrice, setIsFilterPrice] = useState(false);
+  const [isFilterSize, setIsFilterSize] = useState(false);
+
+  const categoryModalRef = useRef<HTMLDivElement | null>(null);
+  const colorModalRef = useRef<HTMLDivElement | null>(null);
+  const priceModalRef = useRef<HTMLDivElement | null>(null);
+  const sizeModalRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleCategoryOutsideClick = (e: MouseEvent) => {
+      if (
+        categoryModalRef.current &&
+        !categoryModalRef.current.contains(e.target as Node)
+      ) {
+        setIsFilterCategory(false);
+      }
+    };
+    if (isFilterCategory) {
+      document.addEventListener("mousedown", handleCategoryOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handleCategoryOutsideClick);
+    }
+
+    const handleColorOutsideClick = (e: MouseEvent) => {
+      if (
+        colorModalRef.current &&
+        !colorModalRef.current.contains(e.target as Node)
+      ) {
+        setIsFilterColor(false);
+      }
+    };
+    if (isFilterColor) {
+      document.addEventListener("mousedown", handleColorOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handleColorOutsideClick);
+    }
+
+    const handlePriceOutsideClick = (e: MouseEvent) => {
+      if (
+        priceModalRef.current &&
+        !priceModalRef.current.contains(e.target as Node)
+      ) {
+        setIsFilterPrice(false);
+      }
+    };
+    if (isFilterPrice) {
+      document.addEventListener("mousedown", handlePriceOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handlePriceOutsideClick);
+    }
+
+    const handleSizeOutsideClick = (e: MouseEvent) => {
+      if (
+        sizeModalRef.current &&
+        !sizeModalRef.current.contains(e.target as Node)
+      ) {
+        setIsFilterSize(false);
+      }
+    };
+    if (isFilterSize) {
+      document.addEventListener("mousedown", handleSizeOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handleSizeOutsideClick);
+    }
+  }, [isFilterCategory, isFilterColor, isFilterPrice, isFilterSize]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,22 +119,6 @@ const Page = (props: FilterProps) => {
     fetchData();
   }, [selectedCategories, selectedSize, selectedHexValues, price]);
 
-  const handleFilterCategory = () => {
-    return <FilterCategory />;
-  };
-
-  const handleFilterColor = () => {
-    return <FilterColor />;
-  };
-
-  const handleFilterPrice = () => {
-    return <FilterPrice />;
-  };
-
-  const handleFilterSize = () => {
-    return <FilterSize />;
-  };
-
   const formatPrice = (price: number) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
@@ -93,45 +143,101 @@ const Page = (props: FilterProps) => {
             } */}
       </div>
       <hr />
-      <div className="flex items-center ml-28 mt-10 ">
+      <div className="flex items-center ml-28 mt-10 relative">
         <div className="px-10">
           <h1 className="py-3 mb-10 text-3xl font-medium">商品</h1>
           <div className="flex flex-row">
             <div className="text-gray-600">絞り込み:</div>
-            <div className="ml-5">
+            <div className="ml-5 relative">
               <span
                 className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline"
-                onClick={handleFilterCategory}
+                onClick={() => setIsFilterCategory(!isFilterCategory)}
               >
                 カテゴリー
                 <div className="ml-2">
-                  <BiChevronDown className="transform" />
+                  <BiChevronDown />
                 </div>
               </span>
+              {isFilterCategory && (
+                <div
+                  className="modal absolute top-12 left-0 w-full"
+                  ref={categoryModalRef}
+                >
+                  <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
+                    <FilterCategory />
+                  </div>
+                </div>
+              )}
             </div>
-            <div className="ml-5">
-              <span className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline">
+            <div className="ml-5 relative">
+              <span
+                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline"
+                onClick={() => {
+                  setIsFilterColor(!isFilterColor);
+                }}
+              >
                 カラー
                 <div className="ml-2">
                   <BiChevronDown className="transform" />
                 </div>
               </span>
+              {isFilterColor && (
+                <div
+                  className="modal absolute top-12 left-0 w-full"
+                  ref={colorModalRef}
+                >
+                  <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
+                    <FilterColor />
+                  </div>
+                </div>
+              )}
             </div>
-            <div className="ml-5">
-              <span className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline">
+            <div className="ml-5 relative">
+              <span
+                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline"
+                ref={colorModalRef}
+                onClick={() => {
+                  setIsFilterPrice(!isFilterPrice);
+                }}
+              >
                 価格
                 <div className="ml-2">
                   <BiChevronDown className="transform" />
                 </div>
               </span>
+              {isFilterPrice && (
+                <div
+                  className="modal absolute top-12 left-0 w-full"
+                  ref={priceModalRef}
+                >
+                  <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
+                    <FilterPrice />
+                  </div>
+                </div>
+              )}
             </div>
-            <div className="ml-5">
-              <span className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline">
+            <div className="ml-5 relative">
+              <span
+                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline"
+                onClick={() => {
+                  setIsFilterSize(!isFilterSize);
+                }}
+              >
                 サイズ
                 <div className="ml-2">
                   <BiChevronDown className="transform" />
                 </div>
               </span>
+              {isFilterSize && (
+                <div
+                  className="modal absolute top-12 left-0 w-full"
+                  ref={sizeModalRef}
+                >
+                  <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
+                    <FilterSize />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 mt-8">
