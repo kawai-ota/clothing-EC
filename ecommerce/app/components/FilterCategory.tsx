@@ -51,6 +51,10 @@ const FilterCategory = (props: FilterCategoryProps) => {
           <option value="バッグ">バッグ</option>
           <option value="シューズ">シューズ</option>
           <option value="ステッカー">ステッカー</option>
+          <option value="財布/小物">財布/小物</option>
+          <option value="アクセサリー">アクセサリー</option>
+          <option value="下着">下着</option>
+          <option value="靴下">靴下</option>
         </select>
       </div>
     </>

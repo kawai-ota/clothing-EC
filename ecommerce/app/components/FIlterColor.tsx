@@ -51,7 +51,7 @@ const FIlterColor = (props: FilterColorProps) => {
   return (
     <>
       <div className="flex flex-row justify-between">
-        <div>FilterCategory</div>
+        <div>カラーを選択</div>
         <button
           onClick={() => {
             props.setIsFilterColor(!props.isFilterColor);

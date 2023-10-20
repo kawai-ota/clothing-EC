@@ -29,7 +29,7 @@ const FilterPrice = (props: FilterPriceProps) => {
   return (
     <>
       <div className="flex flex-row justify-between">
-        <div>値段の選択</div>
+        <div>価格を選択</div>
         <button
           onClick={() => {
             props.setIsFilterPrice(!props.isFilterPrice);

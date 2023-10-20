@@ -19,7 +19,7 @@ const FIlterSize = (props: FilterSizeProps) => {
   return (
     <>
       <div className="flex flex-row justify-between">
-        <div>サイズの選択</div>
+        <div>サイズを選択</div>
         <button
           onClick={() => {
             props.setIsFilterSize(!props.isFilterSize);
