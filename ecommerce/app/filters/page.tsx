@@ -15,8 +15,10 @@ type FilterProps = {};
 const Page = (props: FilterProps) => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedSize, setSelectedSize] = useState<string[]>([]);
-  const [allHexValues, setAllHexValues] = useState<string[]>([]);
-  const [selectedHexValues, setSelectedHexValues] = useState<string[]>([]);
+  const [allColorValues, setAllColorValues] = useState<string[]>([]);
+  const [selectedAllColorValues, setSelectedAllColorValues] = useState<
+    string[]
+  >([]);
   const [price, setPrice] = useState({
     min: 0,
     max: 0,
@@ -102,7 +104,7 @@ const Page = (props: FilterProps) => {
                 min: price.min,
                 max: price.max,
               },
-              colors: selectedHexValues,
+              colors: selectedAllColorValues,
             },
             headers: {
               "Content-Type": "application/json",
@@ -117,7 +119,7 @@ const Page = (props: FilterProps) => {
       }
     };
     fetchData();
-  }, [selectedCategories, selectedSize, selectedHexValues, price]);
+  }, [selectedCategories, selectedSize, selectedAllColorValues, price]);
 
   const formatPrice = (price: number) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -189,10 +191,14 @@ const Page = (props: FilterProps) => {
                   className="modal absolute top-12 left-0 w-full"
                   ref={colorModalRef}
                 >
-                  <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
+                  <div className="modal-content w-[550px] h-[345px] border-[1px] relative z-10 p-4 bg-white">
                     <FilterColor
                       setIsFilterColor={setIsFilterColor}
                       isFilterColor={isFilterColor}
+                      allColorValues={allColorValues}
+                      setAllColorValues={setAllColorValues}
+                      selectedAllColorValues={selectedAllColorValues}
+                      setSelectedAllColorValues={setSelectedAllColorValues}
                     />
                   </div>
                 </div>
