@@ -1,6 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
+import FilterCategory from "../components/FilterCategory";
+import FilterColor from "../components/FIlterColor";
+import FilterPrice from "../components/FilterPrice";
+import FilterSize from "../components/FilterSize";
 import axios from "axios";
 import Link from "next/link";
 import Filter from "./Filter";
@@ -49,13 +53,25 @@ const Page = (props: FilterProps) => {
     fetchData();
   }, [selectedCategories, selectedSize, selectedHexValues, price]);
 
+  const handleFilterCategory = () => {
+    return <FilterCategory />;
+  };
+
+  const handleFilterColor = () => {
+    return <FilterColor />;
+  };
+
+  const handleFilterPrice = () => {
+    return <FilterPrice />;
+  };
+
+  const handleFilterSize = () => {
+    return <FilterSize />;
+  };
+
   const formatPrice = (price: number) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
-
-  // const handleCategory = () => {
-  //   return setIsChevronRotated(!isChevronRotated);
-  // };
 
   return (
     <div className="px-5 max-w-[1280px] mb-[100px] mx-auto">
@@ -83,12 +99,12 @@ const Page = (props: FilterProps) => {
           <div className="flex flex-row">
             <div className="text-gray-600">絞り込み:</div>
             <div className="ml-5">
-              <span className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline">
+              <span
+                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline"
+                onClick={handleFilterCategory}
+              >
                 カテゴリー
-                <div
-                  // onClick={handleCategory}
-                  className="ml-2"
-                >
+                <div className="ml-2">
                   <BiChevronDown className="transform" />
                 </div>
               </span>
@@ -96,10 +112,7 @@ const Page = (props: FilterProps) => {
             <div className="ml-5">
               <span className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline">
                 カラー
-                <div
-                  // onClick={handleCategory}
-                  className="ml-2"
-                >
+                <div className="ml-2">
                   <BiChevronDown className="transform" />
                 </div>
               </span>
@@ -107,10 +120,7 @@ const Page = (props: FilterProps) => {
             <div className="ml-5">
               <span className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline">
                 価格
-                <div
-                  // onClick={handleCategory}
-                  className="ml-2"
-                >
+                <div className="ml-2">
                   <BiChevronDown className="transform" />
                 </div>
               </span>
