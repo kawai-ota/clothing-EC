@@ -16,7 +16,7 @@ export async function GET(request: Request) {
       where: {
         OR: [
           ...categories.map((category) => ({
-            style: {
+            category: {
               contains: category,
             },
           })),

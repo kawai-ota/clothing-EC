@@ -19,7 +19,7 @@ const FilterCategory = (props: FilterCategoryProps) => {
 
   return (
     <>
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between mb-2">
         <div>カテゴリーを選択</div>
         <button
           onClick={() => {
