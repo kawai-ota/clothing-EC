@@ -242,10 +242,12 @@ const Page = (props: FilterProps) => {
                   className="modal absolute top-12 left-0 w-full"
                   ref={sizeModalRef}
                 >
-                  <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
+                  <div className="modal-content w-[380px] h-[165px] border-[1px] relative z-10 p-4 bg-white">
                     <FilterSize
                       setIsFilterSize={setIsFilterSize}
                       isFilterSize={isFilterSize}
+                      selectedSize={selectedSize}
+                      setSelectedSize={setSelectedSize}
                     />
                   </div>
                 </div>
