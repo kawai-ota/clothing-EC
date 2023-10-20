@@ -28,7 +28,7 @@ const page = async (props: MyBrandsProps) => {
     );
   }
   return (
-    <div className="px-5 max-w-[1280px] mx-auto">
+    <div className="px-5 max-w-[1280px] mx-auto mb-20">
       <Navbar />
       <hr />
       <div>
