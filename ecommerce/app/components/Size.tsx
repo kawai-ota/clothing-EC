@@ -6,7 +6,7 @@ interface ParaProps {
 
 const Size: React.FC<ParaProps> = ({ setFormData }) => {
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
-  const sizes = ["S", "M", "L", "XL", "2XL"];
+  const sizes = ["XS", "S", "M", "L", "XL", "XXL", "3XL"];
 
   const handleSizeButtonClick = (size: string) => {
     setSelectedSizes((prevSelectedSizes) => {
@@ -26,18 +26,23 @@ const Size: React.FC<ParaProps> = ({ setFormData }) => {
   };
 
   return (
-    <div>
+    <div className="flex flex-row items-center mr-4">
       {sizes.map((size) => (
         <button
           key={size}
-          className={`border-[0.5px] rounded-lg text-center text-[14px] py-[2px] cursor-pointer px-3 mt-4 mb-5 mr-5
-     ${selectedSizes.includes(size) ? "bg-gray-500 text-white" : ""}`}
+          className={`flex mt-2 mr-4 w-8 h-8 rounded-full border border-gray-500 items-center justify-center text-sm ${
+            selectedSizes.includes(size)
+              ? "bg-black text-white"
+              : "bg-white text-gray-500"
+          }`}
           onClick={() => handleSizeButtonClick(size)}
         >
           {size}
         </button>
       ))}
-      <button onClick={handleSubmit}>選択</button>
+      <button className="mt-2" onClick={handleSubmit}>
+        選択
+      </button>
     </div>
   );
 };

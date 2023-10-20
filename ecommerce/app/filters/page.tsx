@@ -124,14 +124,14 @@ const Page = (props: FilterProps) => {
             {response.map((product: any) => (
               <div key={product.id}>
                 <Link href={`/dashboard/${product.id}`}>
-                  <div className="relative rounded-lg">
+                  <div className="relative rounded-lg group">
                     <img
                       src={product.images.split(",")[0]}
-                      className="w-[250px] h-[250px] object-cover object-top rounded-lg"
+                      className="w-[250px] h-[250px] object-cover object-top rounded-lg transform group-hover:translate-y-[-10px] transition-transform  border-2 border-transparent group-hover:border-[#31ACA3] transition-border duration-300"
                       alt=""
                     />
                   </div>
-                  <div className="flex items-center justify-between mt-4">
+                  <div className="flex items-center justify-between mt-4 group">
                     <div>
                       <h1 className="text-[14px] font-medium max-w-[150px] whitespace-nowrap overflow-hidden">
                         {product.title}
