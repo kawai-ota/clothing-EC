@@ -20,8 +20,8 @@ const Page = (props: FilterProps) => {
     string[]
   >([]);
   const [price, setPrice] = useState({
-    min: 0,
-    max: 0,
+    min: "",
+    max: "",
   });
   const [response, setResponse] = useState<any[]>([]);
   const [isFilterCategory, setIsFilterCategory] = useState<boolean>(false);
@@ -222,10 +222,12 @@ const Page = (props: FilterProps) => {
                   className="modal absolute top-12 left-0 w-full"
                   ref={priceModalRef}
                 >
-                  <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
+                  <div className="modal-content w-[380px] h-[155px] border-[1px] relative z-10 p-4 bg-white">
                     <FilterPrice
                       setIsFilterPrice={setIsFilterPrice}
                       isFilterPrice={isFilterPrice}
+                      setPrice={setPrice}
+                      price={price}
                     />
                   </div>
                 </div>
