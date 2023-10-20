@@ -96,19 +96,18 @@ const Info: React.FC<InfoProps> = ({
         />
       ))}
       <h3 className="font-medium mt-8 mb-3 text-[14px]">サイズを選択</h3>
-      <ul className="flex space-x-5">
+      <ul className="flex items-center space-x-5">
         {sizes.map((size, index) => (
           <li
             key={index}
-            className={`p-1 px-2 border-[1px] rounded-lg cursor-pointer inline-block text-center ${
-              selectedSizes.includes(size)
-                ? "bg-black text-white"
-                : "bg-white text-black"
-            }`}
+            className={`flex items-center justify-center p-1 px-2 border-[1px] cursor-pointer text-center`}
             onClick={() => handleSelectSize(size)}
             style={{
-              borderRadius: "100%",
-              display: "inline-block",
+              width: "40px", // サイズ部分の幅
+              height: "40px", // サイズ部分の高さ
+              borderRadius: "50%", // 完璧な円形にする
+              background: selectedSizes.includes(size) ? "black" : "white",
+              color: selectedSizes.includes(size) ? "white" : "black",
             }}
           >
             {size}
