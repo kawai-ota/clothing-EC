@@ -165,10 +165,12 @@ const Page = (props: FilterProps) => {
                   className="modal absolute top-12 left-0 w-full"
                   ref={categoryModalRef}
                 >
-                  <div className="modal-content w-[350px] h-[145px] border-[1px] relative z-10 p-4 bg-white">
+                  <div className="modal-content w-[450px] h-[245px] border-[1px] relative z-10 p-4 bg-white">
                     <FilterCategory
                       setIsFilterCategory={setIsFilterCategory}
                       isFilterCategory={isFilterCategory}
+                      selectedCategories={selectedCategories}
+                      setSelectedCategories={setSelectedCategories}
                     />
                   </div>
                 </div>
