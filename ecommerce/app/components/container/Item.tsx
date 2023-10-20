@@ -6,7 +6,11 @@ import prisma from "@/app/lib/prismadb";
 type ItemProps = {};
 
 const Item = async (props: ItemProps) => {
-  const products = await prisma.product.findMany();
+  const products = await prisma.product.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
   if (products.length === 0) {
     return <div>販売している商品はありません</div>;
   }
