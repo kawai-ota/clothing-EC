@@ -10,6 +10,10 @@ const Item = async (props: ItemProps) => {
   if (products.length === 0) {
     return <div>販売している商品はありません</div>;
   }
+
+  const formatPrice = (price: number) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
   return (
     <div>
       <h1 className="py-3 font-medium text-3xl ml-20 mt-10 mb-10">商品</h1>
@@ -31,7 +35,9 @@ const Item = async (props: ItemProps) => {
                   </h1>
                   <p className="text-[13px] opacity-60">{product.store}</p>
                 </div>
-                <span className="px-2 font-medium">￥{product.price}</span>
+                <span className="px-2 font-medium">
+                  ￥{formatPrice(product.price)}
+                </span>
               </div>
             </Link>
           </div>

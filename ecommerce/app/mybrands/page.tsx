@@ -27,6 +27,11 @@ const page = async (props: MyBrandsProps) => {
       </div>
     );
   }
+
+  const formatPrice = (price: number) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   return (
     <div className="px-5 max-w-[1280px] mx-auto mb-20">
       <Navbar />
@@ -49,7 +54,7 @@ const page = async (props: MyBrandsProps) => {
               </Link>
               <div className="ml-10">
                 <h1 className="text-2xl mb-3">{product.title}</h1>
-                <h1 className="mb-3"> ￥{product.price}</h1>
+                <h1 className="mb-3"> ￥{formatPrice(product.price)}</h1>
                 <h1 className="mb-3"> カテゴリー:{product.category}</h1>
                 <h1 className="mb-3"> スタイル:{product.style}</h1>
                 <h1 className="mb-3"> アパレル名:{product.store}</h1>

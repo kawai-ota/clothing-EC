@@ -38,6 +38,12 @@ const AllCartProduct = async (props: AllCartProductProps) => {
     );
   }
 
+  const formatPrice = (price: number | undefined) => {
+    if (typeof price === "number") {
+      return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  };
+
   return (
     <div className="mt-14">
       {cartProducts.map((cartProduct) => (
@@ -57,7 +63,7 @@ const AllCartProduct = async (props: AllCartProductProps) => {
               <div className="flex flex-col">
                 <h1 className="text-2xl mb-3">{cartProduct?.title}</h1>
                 <h2 className="mb-2 text-neutral-800 ">
-                  ￥{cartProduct?.price}
+                  ￥{formatPrice(cartProduct?.price)}
                 </h2>
                 <h3 className="text-sm text-neutral-600 mb-2">
                   カテゴリー:{cartProduct?.category}

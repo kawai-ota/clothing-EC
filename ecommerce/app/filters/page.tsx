@@ -49,6 +49,10 @@ const Page = (props: FilterProps) => {
     fetchData();
   }, [selectedCategories, selectedSize, selectedHexValues, price]);
 
+  const formatPrice = (price: number) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   // const handleCategory = () => {
   //   return setIsChevronRotated(!isChevronRotated);
   // };
@@ -138,7 +142,9 @@ const Page = (props: FilterProps) => {
                       </h1>
                       <p className="text-[13px] opacity-60">{product.store}</p>
                     </div>
-                    <span className="px-2 font-medium">￥{product.price}</span>
+                    <span className="px-2 font-medium">
+                      ￥{formatPrice(product.price)}
+                    </span>
                   </div>
                 </Link>
               </div>

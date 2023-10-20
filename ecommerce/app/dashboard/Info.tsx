@@ -75,6 +75,10 @@ const Info: React.FC<InfoProps> = ({
     setReturnAccordionOpen(!isReturnAccordionOpen);
   };
 
+  const formatPrice = (price: number) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   return (
     <div className="relative info">
       <h3 className="font-medium mt-8 mb-3 text-[14px]">
@@ -111,7 +115,7 @@ const Info: React.FC<InfoProps> = ({
           </li>
         ))}
       </ul>
-      <h1 className="text-2xl mt-10">￥{price}</h1>
+      <h1 className="text-2xl mt-10">￥{formatPrice(price)}</h1>
       <div className="flex items-center mt-7 space-x-10">
         <AddCart productId={id} />
       </div>
