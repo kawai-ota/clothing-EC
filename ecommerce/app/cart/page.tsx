@@ -13,8 +13,8 @@ const page = async (props: CartProps) => {
     <>
       <div className="max-w-[1280px] mx-auto px-5">
         <Navbar />
+        <hr />
         <AllCartProduct userId={session?.user?.id} />
-        <hr className="mt-10 mb-10" />
         <AllPurchased userId={session?.user?.id} />
       </div>
     </>

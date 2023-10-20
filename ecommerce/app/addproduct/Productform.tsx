@@ -94,6 +94,7 @@ const Productform = (props: ProductFormProps) => {
     <div className="px-5 max-w-[1280px] mx-auto mb-10">
       <div>
         <Navbar />
+        <hr />
       </div>
       <h1 className="text-3xl font-semibold py-6">ブランドの出品</h1>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
