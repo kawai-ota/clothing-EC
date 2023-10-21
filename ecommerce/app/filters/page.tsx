@@ -95,25 +95,21 @@ const Page = (props: FilterProps) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios
-          .get("/api/filterproduct", {
-            params: {
-              categories: selectedCategories,
-              size: selectedSize,
-              price: {
-                min: price.min,
-                max: price.max,
-              },
-              colors: selectedAllColorValues,
+        const response = await axios.get("/api/filterproduct", {
+          params: {
+            categories: selectedCategories,
+            size: selectedSize,
+            price: {
+              min: price.min,
+              max: price.max,
             },
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
-          .then((response) => {
-            console.log("response", response.data);
-            setResponse(response.data);
-          });
+            colors: selectedAllColorValues,
+          },
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        setResponse(response.data);
       } catch (error) {
         console.log("error", error);
       }
@@ -129,20 +125,6 @@ const Page = (props: FilterProps) => {
     <div className="px-5 max-w-[1280px] mb-[100px] mx-auto">
       <div>
         <Navbar />
-        {/* {
-              <Filter
-                selectedCategories={selectedCategories}
-                setSelectedCategories={setSelectedCategories}
-                selectedSize={selectedSize}
-                setSelectedSize={setSelectedSize}
-                allHexValues={allHexValues}
-                setAllHexValues={setAllHexValues}
-                selectedHexValues={selectedHexValues}
-                setSelectedAllHexValues={setSelectedHexValues}
-                price={price}
-                setPrice={setPrice}
-              />
-            } */}
       </div>
       <hr />
       <div className="flex items-center ml-28 mt-10 relative">
@@ -266,25 +248,30 @@ const Page = (props: FilterProps) => {
           </div>
           <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 mt-8">
             {response.map((product: any) => (
-              <div key={product.id}>
+              <div
+                key={product.id}
+                className="rounded-lg shadow-md w-full sm:w-auto bg-white mx-8"
+              >
                 <Link href={`/dashboard/${product.id}`}>
-                  <div className="relative rounded-lg group">
-                    <img
-                      src={product.images.split(",")[0]}
-                      className="w-[250px] h-[250px] object-cover object-top rounded-lg transform group-hover:translate-y-[-10px] transition-transform  border-2 border-transparent group-hover:border-[#31ACA3] transition-border duration-300"
-                      alt=""
-                    />
-                  </div>
-                  <div className="flex items-center justify-between mt-4 group">
-                    <div>
-                      <h1 className="text-[14px] font-medium max-w-[150px] whitespace-nowrap overflow-hidden">
-                        {product.title}
-                      </h1>
-                      <p className="text-[13px] opacity-60">{product.store}</p>
+                  <div className="relative rounded-t-lg group">
+                    <div style={{ height: "200px" }}>
+                      <img
+                        src={product.images.split(",")[0]}
+                        className="w-full h-full object-cover rounded-t-lg transform group-hover:scale-105 transition-transform"
+                        alt=""
+                      />
                     </div>
-                    <span className="px-2 font-medium">
-                      ￥{formatPrice(product.price)}
-                    </span>
+                  </div>
+                  <div className="p-4">
+                    <h1 className="text-lg font-medium mb-2">
+                      {product.title}
+                    </h1>
+                    <p className="text-sm text-gray-600">{product.store}</p>
+                    <div className="flex justify-between items-center mt-2">
+                      <span className="text-xl font-medium text-[#31ACA3]">
+                        ￥{formatPrice(product.price)}
+                      </span>
+                    </div>
                   </div>
                 </Link>
               </div>
