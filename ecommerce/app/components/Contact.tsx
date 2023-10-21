@@ -22,12 +22,12 @@ const Contact = (props: ContactProps) => {
           <div className="grid grid-cols-2">
             <input
               type="text"
-              className="w-[350px] h-[50px] mr-10 my-10 border-[1px] rounded-lg focus:border-[#31ACA3] px-3 focus:border-2 outline-none"
+              className="sm:w-[400px] sm:h-[50px] w-[170px] h-[50px] mr-10 my-10 border-[1px] rounded-lg focus:border-[#31ACA3] px-3 focus:border-2 outline-none"
               placeholder="名前"
             />
             <input
               type="email"
-              className="w-full h-[50px] border-[1px] my-10 rounded-lg focus:border-[#31ACA3] px-3 focus:border-2 outline-none"
+              className="sm:w-[450px] sm:h-[50px] w-[170px] h-[50px] border-[1px] my-10 rounded-lg focus:border-[#31ACA3] px-3 focus:border-2 outline-none"
               placeholder="メールアドレス"
             />
           </div>
