@@ -43,18 +43,57 @@ const FilterCategory = (props: FilterCategoryProps) => {
           }
           className="w-full h-32 p-2 border rounded-lg"
         >
-          <option value="トップス">トップス</option>
-          <option value="ジャケット/アウター">ジャケット/アウター</option>
-          <option value="ボトムス">ボトムス</option>
-          <option value="ワンピース/ドレス">ワンピース/ドレス</option>
-          <option value="スカート">スカート</option>
-          <option value="バッグ">バッグ</option>
-          <option value="シューズ">シューズ</option>
-          <option value="ステッカー">ステッカー</option>
-          <option value="財布/小物">財布/小物</option>
-          <option value="アクセサリー">アクセサリー</option>
-          <option value="下着">下着</option>
-          <option value="靴下">靴下</option>
+          <option value="トップス" className="cursor-pointer hover:bg-gray-300">
+            トップス
+          </option>
+          <option
+            value="ジャケット/アウター"
+            className="cursor-pointer hover:bg-gray-300"
+          >
+            ジャケット/アウター
+          </option>
+          <option value="ボトムス" className="cursor-pointer hover:bg-gray-300">
+            ボトムス
+          </option>
+          <option
+            value="ワンピース/ドレス"
+            className="cursor-pointer hover:bg-gray-300"
+          >
+            ワンピース/ドレス
+          </option>
+          <option value="スカート" className="cursor-pointer hover:bg-gray-300">
+            スカート
+          </option>
+          <option value="バッグ" className="cursor-pointer hover:bg-gray-300">
+            バッグ
+          </option>
+          <option value="シューズ" className="cursor-pointer hover:bg-gray-300">
+            シューズ
+          </option>
+          <option
+            value="ステッカー"
+            className="cursor-pointer hover:bg-gray-300"
+          >
+            ステッカー
+          </option>
+          <option
+            value="財布/小物"
+            className="cursor-pointer hover:bg-gray-300"
+          >
+            財布/小物
+          </option>
+          <option
+            value="アクセサリー"
+            className="cursor-pointer hover:bg-gray-300"
+          >
+            アクセサリー
+          </option>
+          <option value="下着" className="cursor-pointer hover:bg-gray-300">
+            下着
+          </option>
+          <option value="靴下" className="cursor-pointer hover:bg-gray-300">
+            靴下
+          </option>
         </select>
       </div>
     </>
