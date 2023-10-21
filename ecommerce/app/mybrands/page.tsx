@@ -9,16 +9,16 @@ import DeleteProduct from "../components/DeleteProduct";
 
 type MyBrandsProps = {};
 
-const page = async (props: MyBrandsProps) => {
+const Page = async (props: MyBrandsProps) => {
   const session = await getServerSession(options);
 
   const allmyproduct = await prisma.product.findMany({
     where: {
       userId: session?.user.id,
     },
-    orderBy:{
-      createdAt:'desc'
-    }
+    orderBy: {
+      createdAt: "desc",
+    },
   });
   if (allmyproduct.length === 0) {
     return (
@@ -43,19 +43,19 @@ const page = async (props: MyBrandsProps) => {
         {allmyproduct.map((product) => (
           <div
             key={product.id}
-            className="relative flex justify-between w-8/12 px-6 mx-auto shadow-lg  p-5 rounded-lg mt-10"
+            className="relative shadow-lg p-5 rounded-lg mt-10 sm:w-8/12 mx-auto"
           >
-            <div className="flex">
-              <Link href={`/dashboard/${product.id}`}>
-                <div>
+            <div className="flex flex-col sm:flex-row">
+              <div className="sm:w-[200px] sm:h-[200px] mb-4 sm:mb-0">
+                <Link href={`/dashboard/${product.id}`}>
                   <img
-                    className="w-[200px] h-[200px] object-cover object-top rounded-lg"
+                    className="w-full h-[200px]  rounded-lg"
                     src={product.images.split(",")[0]}
                     alt=""
                   />
-                </div>
-              </Link>
-              <div className="ml-10">
+                </Link>
+              </div>
+              <div className="flex flex-col sm:flex-grow ml-0 sm:ml-10">
                 <h1 className="text-2xl mb-3">{product.title}</h1>
                 <h1 className="mb-3"> ￥{formatPrice(product.price)}</h1>
                 <h1 className="mb-3"> カテゴリー:{product.category}</h1>
@@ -82,4 +82,4 @@ const page = async (props: MyBrandsProps) => {
   );
 };
 
-export default page;
+export default Page;
