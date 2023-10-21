@@ -127,14 +127,15 @@ const Page = (props: FilterProps) => {
         <Navbar />
       </div>
       <hr />
-      <div className="flex items-center ml-28 mt-10 relative">
-        <div className="px-10">
+      <div className="flex items-center sm:ml-28 mx-auto mt-10 relative">
+        <div className="">
           <h1 className="py-3 mb-10 text-3xl font-medium">商品</h1>
-          <div className="flex flex-row">
-            <div className="text-gray-600">絞り込み:</div>
+          <div className="flex sm:flex-row flex-col">
+            <div className="text-gray-600 ">絞り込み:</div>
+
             <div className="ml-5 relative">
               <span
-                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline"
+                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline sm:my-0 my-2 sm:mr-0 mr-4"
                 onClick={() => setIsFilterCategory(!isFilterCategory)}
               >
                 カテゴリー
@@ -160,7 +161,7 @@ const Page = (props: FilterProps) => {
             </div>
             <div className="ml-5 relative">
               <span
-                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline"
+                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline mb-2"
                 onClick={() => {
                   setIsFilterColor(!isFilterColor);
                 }}
@@ -190,7 +191,7 @@ const Page = (props: FilterProps) => {
             </div>
             <div className="ml-5 relative">
               <span
-                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline"
+                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline mb-2"
                 ref={colorModalRef}
                 onClick={() => {
                   setIsFilterPrice(!isFilterPrice);
@@ -219,7 +220,7 @@ const Page = (props: FilterProps) => {
             </div>
             <div className="ml-5 relative">
               <span
-                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline"
+                className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline mb-2"
                 onClick={() => {
                   setIsFilterSize(!isFilterSize);
                 }}
@@ -246,36 +247,36 @@ const Page = (props: FilterProps) => {
               )}
             </div>
           </div>
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-20 gap-12 mt-8">
-            {response.map((product: any) => (
-              <div
-                key={product.id}
-                className="rounded-lg shadow-md w-full sm:w-auto bg-white mx-8"
-              >
-                <Link href={`/dashboard/${product.id}`}>
-                  <div className="relative rounded-t-lg group">
-                    <div style={{ height: "200px" }}>
-                      <img
-                        src={product.images.split(",")[0]}
-                        className="w-full h-full object-cover rounded-t-lg transform group-hover:scale-105 transition-transform"
-                        alt=""
-                      />
+          <div className=" max-w-full mb-10 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-8">
+              {response.map((product: any) => (
+                <div className="rounded-lg shadow-md w-full sm:w-auto bg-white mr-12 ml-2">
+                  <Link href={`/dashboard/${product.id}`}>
+                    <div className="relative rounded-t-lg group">
+                      <div style={{ height: "200px" }}>
+                        <img
+                          src={product.images.split(",")[0]}
+                          className="w-full h-full object-cover rounded-t-lg transform group-hover:scale-105 transition-transform"
+                          alt=""
+                          style={{ objectPosition: "center" }}
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-4">
-                    <h1 className="text-lg font-medium mb-2">
-                      {product.title}
-                    </h1>
-                    <p className="text-sm text-gray-600">{product.store}</p>
-                    <div className="flex justify-between items-center mt-2">
-                      <span className="text-xl font-medium text-[#31ACA3]">
-                        ￥{formatPrice(product.price)}
-                      </span>
+                    <div className="p-4">
+                      <h1 className="text-lg font-medium mb-2">
+                        {product.title}
+                      </h1>
+                      <p className="text-sm text-gray-600">{product.store}</p>
+                      <div className="flex justify-between items-center mt-2">
+                        <span className="text-xl font-medium text-[#31ACA3]">
+                          ￥{formatPrice(product.price)}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
