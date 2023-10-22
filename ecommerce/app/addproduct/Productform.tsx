@@ -40,6 +40,15 @@ const Productform = (props: ProductFormProps) => {
       [name]: value,
     });
   };
+
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
   const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value =
       e.target.name === "price"
@@ -114,13 +123,78 @@ const Productform = (props: ProductFormProps) => {
           <label htmlFor="category" className="font-medium">
             カテゴリー
           </label>
-          <input
-            type="text"
+          <select
             className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
             name="category"
             value={formData.category}
-            onChange={handleChange}
-          />
+            onChange={handleCategoryChange}
+          >
+            <option value="">選択してください</option>
+            <option
+              value="トップス"
+              className="cursor-pointer hover:bg-gray-300"
+            >
+              トップス
+            </option>
+            <option
+              value="ジャケット/アウター"
+              className="cursor-pointer hover:bg-gray-300"
+            >
+              ジャケット/アウター
+            </option>
+            <option
+              value="ボトムス"
+              className="cursor-pointer hover:bg-gray-300"
+            >
+              ボトムス
+            </option>
+            <option
+              value="ワンピース/ドレス"
+              className="cursor-pointer hover:bg-gray-300"
+            >
+              ワンピース/ドレス
+            </option>
+            <option
+              value="スカート"
+              className="cursor-pointer hover:bg-gray-300"
+            >
+              スカート
+            </option>
+            <option value="バッグ" className="cursor-pointer hover:bg-gray-300">
+              バッグ
+            </option>
+            <option
+              value="シューズ"
+              className="cursor-pointer hover:bg-gray-300"
+            >
+              シューズ
+            </option>
+            <option
+              value="ステッカー"
+              className="cursor-pointer hover:bg-gray-300"
+            >
+              ステッカー
+            </option>
+            <option
+              value="財布/小物"
+              className="cursor-pointer hover:bg-gray-300"
+            >
+              財布/小物
+            </option>
+            <option
+              value="アクセサリー"
+              className="cursor-pointer hover:bg-gray-300"
+            >
+              アクセサリー
+            </option>
+            <option value="下着" className="cursor-pointer hover:bg-gray-300">
+              下着
+            </option>
+            <option value="靴下" className="cursor-pointer hover:bg-gray-300">
+              靴下
+            </option>
+            {/* 他のカテゴリーオプションも追加できます */}
+          </select>
         </div>
         <div>
           <label htmlFor="style" className="font-medium">
