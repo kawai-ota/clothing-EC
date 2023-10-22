@@ -8,7 +8,7 @@ interface ColorProps {
 }
 
 const Color: React.FC<ColorProps> = ({ setFormData, Color }) => {
-  const [color, setColor] = useState("#fff");
+  const [color, setColor] = useState<string>("#fff");
   const [open, setOpen] = useState<boolean>(false);
   const colorArray: string[] = Color.split(",");
   const [selectedColors, setSelectedColors] = useState<string[]>(colorArray);
@@ -19,6 +19,7 @@ const Color: React.FC<ColorProps> = ({ setFormData, Color }) => {
 
   const handleColorButtonClick = () => {
     setSelectedColors((prevSelectedColors) => [...prevSelectedColors, color]);
+    setColor("fff");
     setOpen(false);
   };
 
