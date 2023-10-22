@@ -3,7 +3,8 @@ import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   try {
-    const searchParams = new URL(request.url).searchParams;
+    const url = new URL(request.url.split("?")[1]);
+    const searchParams = url.searchParams;
     const categories = searchParams.getAll("categories[]");
     const colors = searchParams.getAll("colors[]");
     let sizes = searchParams.getAll("size[]");
