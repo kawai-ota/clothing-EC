@@ -22,7 +22,7 @@ const Productform = (props: ProductFormProps) => {
     style: "",
     size: "",
     inventory: 0,
-    color: "black",
+    color: "#ffffff",
     price: 0,
     images: "",
     userId: id,
