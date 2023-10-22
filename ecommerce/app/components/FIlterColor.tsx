@@ -22,7 +22,11 @@ const FIlterColor = (props: FilterColorProps) => {
 
   const getAllColors = async () => {
     try {
-      const response = await axios.get("/api/color");
+      const response = await axios.get("/api/color", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       return response.data;
     } catch (error) {
       console.error("Error", error);
