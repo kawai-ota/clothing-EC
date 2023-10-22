@@ -250,7 +250,7 @@ const Page = (props: FilterProps) => {
           <div className=" max-w-full mb-10 ">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-8">
               {response.map((product: any) => (
-                <div className="rounded-lg shadow-md w-full sm:w-auto bg-white mr-12 ml-2">
+                <div key = {product.id} className="rounded-lg shadow-md w-full sm:w-auto bg-white mr-12 ml-2">
                   <Link href={`/dashboard/${product.id}`}>
                     <div className="relative rounded-t-lg group">
                       <div style={{ height: "200px" }}>
