@@ -27,11 +27,6 @@ export async function GET(request: Request) {
               contains: size,
             },
           })),
-          ...colors.map((color) => ({
-            color: {
-              contains: color,
-            },
-          })),
           {
             price: {
               gte: minPrice,
