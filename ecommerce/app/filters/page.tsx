@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import FilterCategory from "../components/FilterCategory";
-import FilterColor from "../components/FIlterColor";
+// import FilterColor from "../components/FIlterColor";
 import FilterPrice from "../components/FilterPrice";
 import FilterSize from "../components/FilterSize";
 import axios from "axios";
@@ -159,7 +159,7 @@ const Page = (props: FilterProps) => {
                 </div>
               )}
             </div>
-            <div className="ml-5 relative">
+            {/* <div className="ml-5 relative">
               <span
                 className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline mb-2"
                 onClick={() => {
@@ -188,7 +188,7 @@ const Page = (props: FilterProps) => {
                   </div>
                 </div>
               )}
-            </div>
+            </div> */}
             <div className="ml-5 relative">
               <span
                 className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline mb-2"
