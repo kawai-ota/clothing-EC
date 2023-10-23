@@ -6,6 +6,7 @@ import prisma from "@/app/lib/prismadb";
 import { AiTwotoneEdit } from "react-icons/ai";
 import Navbar from "../components/Navbar";
 import DeleteProduct from "../components/DeleteProduct";
+import Image from "next/image";
 
 type MyBrandsProps = {};
 
@@ -23,7 +24,6 @@ const Page = async (props: MyBrandsProps) => {
   if (allmyproduct.length === 0) {
     return (
       <div className="relative flex items-center justify-center">
-        <img src="empty.png" alt="" />
         <h1 className="absolute top-[80%] text-2xl text-[#3EBCB5]">
           出品している商品はありません。
         </h1>
@@ -48,14 +48,18 @@ const Page = async (props: MyBrandsProps) => {
             <div className="flex flex-col sm:flex-row">
               <div className="sm:w-[200px] sm:h-[200px] mb-4 sm:mb-0">
                 <Link href={`/dashboard/${product.id}`}>
-                  <img
+                  <Image
                     className="w-full h-[200px]  rounded-lg"
                     src={product.images.split(",")[0]}
                     alt=""
+                    width={300}
+                    height={300}
+                    quality={100}
+                    objectFit="cover"
                   />
                 </Link>
               </div>
-              <div className="flex flex-col sm:flex-grow ml-0 sm:ml-10">
+              <div className="flex flex-col sm:flex-grow ml-0 sm:ml-10 justify-center">
                 <h1 className="text-2xl mb-3">{product.title}</h1>
                 <h1 className="mb-3"> ￥{formatPrice(product.price)}</h1>
                 <h1 className="mb-3"> カテゴリー:{product.category}</h1>
