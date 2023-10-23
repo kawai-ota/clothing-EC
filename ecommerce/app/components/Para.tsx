@@ -1,8 +1,6 @@
-"use clilent";
 import React, { useEffect, useRef, useState } from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import TextEditor from "./TextEditor";
 
 interface ParaProps {
   setDescription: React.Dispatch<React.SetStateAction<any>>;
