@@ -1,6 +1,7 @@
-// import axios from "axios";
-// import React, { useEffect } from "react";
-// import { AiOutlineClose } from "react-icons/ai";
+"use client";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 
 // type FilterColorProps = {
 //   isFilterColor: any;

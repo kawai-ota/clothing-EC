@@ -1,3 +1,4 @@
+"use clilent";
 import React, { useEffect, useRef, useState } from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
@@ -46,7 +47,6 @@ const Para: React.FC<ParaProps> = ({ setDescription, description }) => {
       }`}
       ref={menuRef}
     >
-      {/* <TextEditor editor={editor} /> */}
       <EditorContent
         editor={editor}
         style={{ padding: "18px" }}
