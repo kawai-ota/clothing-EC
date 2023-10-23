@@ -10,7 +10,9 @@ const Item = async (props: ItemProps) => {
     orderBy: {
       createdAt: "desc",
     },
+    take: 32000,
   });
+
   if (products.length === 0) {
     return <div>販売している商品はありません</div>;
   }

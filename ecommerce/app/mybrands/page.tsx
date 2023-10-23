@@ -20,6 +20,7 @@ const Page = async (props: MyBrandsProps) => {
     orderBy: {
       createdAt: "desc",
     },
+    take: 32000,
   });
   if (allmyproduct.length === 0) {
     return (

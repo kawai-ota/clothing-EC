@@ -31,6 +31,7 @@ export async function POST(req: Request) {
         in: productIds,
       },
     },
+    take: 32000,
   });
 
   const line_items: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
@@ -57,10 +58,10 @@ export async function POST(req: Request) {
     },
     success_url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/cart?success=1`,
     cancel_url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/cart?cancelled=1`,
-    metadata:{
-      productIds:JSON.stringify(productIds),
-      userId:userId
-    }
+    metadata: {
+      productIds: JSON.stringify(productIds),
+      userId: userId,
+    },
   });
 
   return NextResponse.json({ url: session.url }, { headers: corsHeader });
