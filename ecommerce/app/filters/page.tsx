@@ -7,7 +7,6 @@ import FilterPrice from "../components/FilterPrice";
 import FilterSize from "../components/FilterSize";
 import axios from "axios";
 import Link from "next/link";
-import Filter from "./Filter";
 import { BiChevronDown } from "react-icons/bi";
 
 type FilterProps = {};
