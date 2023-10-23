@@ -7,9 +7,9 @@ type ItemProps = {};
 
 const Item = async (props: ItemProps) => {
   const products = await prisma.product.findMany({
-    orderBy: {
-      createdAt: "desc",
-    },
+    // orderBy: {
+    //   createdAt: "desc",
+    // },
     take: 32000,
   });
 

@@ -17,9 +17,9 @@ const Page = async (props: MyBrandsProps) => {
     where: {
       userId: session?.user.id,
     },
-    orderBy: {
-      createdAt: "desc",
-    },
+    // orderBy: {
+    //   createdAt: "desc",
+    // },
     take: 32000,
   });
   if (allmyproduct.length === 0) {
