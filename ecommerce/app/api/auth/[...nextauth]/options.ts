@@ -1,4 +1,4 @@
-import type { NextAuthOptions } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/app/lib/prismadb";
 import bcrypt from "bcrypt";
@@ -49,20 +49,6 @@ export const options: NextAuthOptions = {
   pages: {
     signIn: "/auth",
     error: "/auth",
-  },
-  callbacks: {
-    session: async ({ session, token, user }) => {
-      if (session?.user) {
-        session.user.id = token.uid;
-      }
-      return session;
-    },
-    jwt: async ({ user, token }) => {
-      if (user) {
-        token.uid = user.id;
-      }
-      return token;
-    },
   },
   session: {
     strategy: "jwt",
