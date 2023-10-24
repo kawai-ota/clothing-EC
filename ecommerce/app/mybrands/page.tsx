@@ -11,8 +11,8 @@ import Image from "next/image";
 type MyBrandsProps = {};
 
 const Page = async (props: MyBrandsProps) => {
+  try{
   const session = await getServerSession(options);
-
   const allmyproduct = await prisma.product.findMany({
     where: {
       userId: session?.user.id,
@@ -85,6 +85,8 @@ const Page = async (props: MyBrandsProps) => {
       </div>
     </div>
   );
-};
+} catch (error:any){
+  return <div>dbエラーです。</div>
+}};
 
 export default Page;
