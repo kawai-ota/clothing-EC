@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from "react";
 import ColorPicker from "react-pick-color";
 import { GrAdd } from "react-icons/gr";

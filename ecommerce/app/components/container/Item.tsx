@@ -1,16 +1,12 @@
 import React from "react";
-import { AiOutlineHeart } from "react-icons/ai";
 import Link from "next/link";
 import prisma from "@/app/lib/prismadb";
 
-type ItemProps = {};
-
-const Item = async (props: ItemProps) => {
+const Item = async () => {
   const products = await prisma.product.findMany({
     orderBy: {
       createdAt: "desc",
     },
-    take: 32000,
   });
 
   if (products.length === 0) {
