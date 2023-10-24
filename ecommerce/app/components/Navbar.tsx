@@ -162,14 +162,16 @@ const Navbar = () => {
             >
               お問い合わせ
             </Link>
-            <Link
-              href="/mybrands"
-              className={`py-3 inline-block w-full hover:underline ${
-                pathname === "/mybrands" ? "underline" : "none"
-              }`}
-            >
-              マイブランド
-            </Link>
+            {session?.user && (
+              <Link
+                href="/mybrands"
+                className={`py-3 inline-block w-full hover:underline ${
+                  pathname === "/mybrands" ? "underline" : "none"
+                }`}
+              >
+                マイブランド
+              </Link>
+            )}
           </li>
         </ul>
         {/* <div className="flex items-center bg-gray-100 p-2 rounded-lg my-4 py-3">
