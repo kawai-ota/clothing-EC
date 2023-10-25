@@ -1,5 +1,5 @@
 import React from "react";
-import getMyProduct from "../actions/route";
+import getMyProduct from "../actions/getMyProduct";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import Link from "next/link";
