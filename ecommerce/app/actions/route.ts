@@ -12,7 +12,6 @@ const getMyProduct = async () => {
       orderBy: {
         createdAt: "desc",
       },
-      take: 32000,
     });
     return allmyproduct;
   } catch (error: any) {
