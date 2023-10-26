@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import prisma from "@/app/lib/prismadb";
 import getItem from "@/app/actions/getItem";
 
 const Item = async () => {
