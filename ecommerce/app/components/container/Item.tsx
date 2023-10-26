@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import getItem from "@/app/actions/getItem";
 
+export const dynamic = "force-dynamic";
+
 const Item = async () => {
   try {
     const products = await getItem();

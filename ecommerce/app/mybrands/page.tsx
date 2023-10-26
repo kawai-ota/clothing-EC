@@ -9,6 +9,8 @@ import DeleteProduct from "../components/DeleteProduct";
 
 type MyBrandsProps = {};
 
+export const dynamic = "force-dynamic";
+
 const Page = async (props: MyBrandsProps) => {
   try {
     const session = await getServerSession(options);
