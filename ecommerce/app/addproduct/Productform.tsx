@@ -193,7 +193,6 @@ const Productform = (props: ProductFormProps) => {
             <option value="靴下" className="cursor-pointer hover:bg-gray-300">
               靴下
             </option>
-            {/* 他のカテゴリーオプションも追加できます */}
           </select>
         </div>
         <div>
