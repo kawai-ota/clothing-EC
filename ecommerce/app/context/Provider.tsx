@@ -2,11 +2,11 @@
 import React, { ReactNode } from "react";
 import { SessionProvider } from "next-auth/react";
 
-type ProviderProps = {
-  children: ReactNode;
-};
+interface AuthContextProps {
+  children: React.ReactNode;
+}
 
-const Provider = ({ children }: ProviderProps) => {
+const Provider = ({ children }: AuthContextProps) => {
   return <SessionProvider>{children}</SessionProvider>;
 };
 

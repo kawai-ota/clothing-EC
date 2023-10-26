@@ -1,10 +1,9 @@
 import prisma from "@/app/lib/prismadb";
-import { getServerSession } from "next-auth";
-import { options } from "@/app/api/auth/[...nextauth]/options";
+import getSession from "./getSession";
 
 const getMyProduct = async () => {
   try {
-    const session = await getServerSession(options);
+    const session = await getSession();
     const allmyproduct = await prisma.product.findMany({
       where: {
         userId: session?.user.id,
