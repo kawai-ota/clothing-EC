@@ -104,9 +104,6 @@ const Page = (props: FilterProps) => {
             },
             colors: selectedAllColorValues,
           },
-          headers: {
-            "Content-Type": "application/json",
-          },
         });
         setResponse(response.data);
       } catch (error) {

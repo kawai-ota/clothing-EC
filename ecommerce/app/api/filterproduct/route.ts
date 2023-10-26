@@ -35,7 +35,6 @@ export async function GET(request: Request) {
           },
         ],
       },
-      take: 32000,
     });
     return NextResponse.json(products);
   } catch (error) {
