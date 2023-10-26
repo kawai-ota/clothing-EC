@@ -8,7 +8,8 @@ const getItem = async () => {
       },
     });
     return products;
-  } catch (error: any) {
+  } catch (error) {
+    console.error("データベースからの取得中にエラーが発生しました:", error);
     return [];
   }
 };
