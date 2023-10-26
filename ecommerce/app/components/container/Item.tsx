@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import prisma from "@/app/lib/prismadb";
 import getItem from "../../actions/getItem";
 
 const Item = async () => {
-  const products = await getItem();
+  const [products, setProducts] = useState<
+    {
+      id: number;
+      title: string;
+      description: string;
+      category: string;
+      style: string;
+      store: string;
+      size: string;
+      inventory: number;
+      color: string;
+      price: number;
+      images: string;
+      userId: number;
+      createdAt: Date;
+    }[]
+  >([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getItem();
+      setProducts(data);
+    };
+    fetchData();
+  }, []);
+
   if (products.length === 0) {
     return <div>販売している商品はありません</div>;
   }
