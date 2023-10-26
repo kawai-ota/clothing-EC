@@ -114,11 +114,19 @@ const Navbar = () => {
               <SignOut />
             </div>
           </div>
-          <Link href="/cart">
-            <div className="p-3 bg-gray-100 rounded-full ml-4">
-              <CiShoppingCart size={20} />
-            </div>
-          </Link>
+          {session ? (
+            <Link href="/cart">
+              <div className="p-3 bg-gray-100 rounded-full ml-4">
+                <CiShoppingCart size={20} />
+              </div>
+            </Link>
+          ) : (
+            <Link href="/auth">
+              <div className="p-3 bg-gray-100 rounded-full ml-4">
+                <CiShoppingCart size={20} />
+              </div>
+            </Link>
+          )}
           <span
             onClick={() => setShowNav(!showNav)}
             className="p-[9px] bg-gray-100 rounded-full md:hidden"
