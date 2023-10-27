@@ -2,7 +2,7 @@
 import clsx from "clsx";
 import React from "react";
 
-interface ButtonProps {
+interface SignButtonProps {
   type?: "button" | "submit" | "reset" | undefined;
   fullWidth?: boolean;
   children?: React.ReactNode;
@@ -12,7 +12,7 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const SignButton: React.FC<SignButtonProps> = ({
   type = "button",
   onClick,
   fullWidth,
@@ -41,4 +41,4 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default Button;
+export default SignButton;
