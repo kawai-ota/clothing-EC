@@ -49,3 +49,32 @@ PAMは個人でアパレルブランドを運営している方、心を込め�
 
 # 📝　スライド資料
 <a href="https://docs.google.com/presentation/d/13DuybtLy9CJ3OvjskLzq8xLhCuuxpw_7-YHbmfiaUPI/edit?usp=sharing">スライド資料</a>
+↑
+上のスライドはPAMについての詳細を記載しております。
+
+## Requirements
+
+```
+node 18.16.1
+TypeScript 5.2.2
+```
+## Downloading and installing steps
+1. Clone the repository
+
+```
+git clone https://github.com/kawai-ota/clothing-EC.git
+```
+2.Go into the repository
+```
+cd clothing-EC
+```
+
+3.Install dependencies
+```
+npm install
+```
+
+4.Run the app
+
+```
+npm start
