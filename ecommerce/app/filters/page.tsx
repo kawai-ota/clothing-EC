@@ -132,7 +132,7 @@ const Page = (props: FilterProps) => {
           <div className="flex sm:flex-row flex-col">
             <div className="text-gray-600 ">絞り込み:</div>
 
-            <div className="ml-5 relative">
+            <div className="sm:ml-5 relative">
               <span
                 className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline sm:my-0 my-2 sm:mr-0 mr-4"
                 onClick={() => setIsFilterCategory(!isFilterCategory)}
@@ -188,7 +188,7 @@ const Page = (props: FilterProps) => {
                 </div>
               )}
             </div> */}
-            <div className="ml-5 relative">
+            <div className="sm:ml-5 relative">
               <span
                 className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline mb-2"
                 ref={colorModalRef}
@@ -217,7 +217,7 @@ const Page = (props: FilterProps) => {
                 </div>
               )}
             </div>
-            <div className="ml-5 relative">
+            <div className="sm:ml-5 relative">
               <span
                 className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline mb-2"
                 onClick={() => {
