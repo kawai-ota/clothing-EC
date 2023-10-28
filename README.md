@@ -25,4 +25,4 @@
 ・レスポンシブ対応を細かく作成する
 
 # 📝　スライド資料
-<a href="https://docs.google.com/presentation/d/13DuybtLy9CJ3OvjskLzq8xLhCuuxpw_7-YHbmfiaUPI/edit#slide=id.p">スライド資料</a>
+<a href="https://docs.google.com/presentation/d/13DuybtLy9CJ3OvjskLzq8xLhCuuxpw_7-YHbmfiaUPI/edit?usp=sharing">スライド資料</a>
