@@ -18,10 +18,21 @@ const FilterCategory = (props: FilterCategoryProps) => {
     );
   };
 
+  const handleReset = () => {
+    props.setSelectedCategories([]);
+  };
+
   return (
     <>
       <div className="flex flex-row justify-between mb-2">
-        <div>カテゴリーを選択</div>
+        <div className="flex flex-col">
+          <div className="mb-1">カテゴリーを選択</div>
+          <div className="flex justify-start">
+            <button className="underline" onClick={handleReset}>
+              リセット
+            </button>
+          </div>
+        </div>
         <button
           onClick={() => {
             props.setIsFilterCategory(!props.isFilterCategory);

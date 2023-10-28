@@ -27,10 +27,23 @@ const FilterPrice = (props: FilterPriceProps) => {
       [e.target.name]: value,
     });
   };
+
+  const handleReset = () => {
+    props.setPrice({ min: "", max: "" });
+  };
+
   return (
     <>
       <div className="flex flex-row justify-between">
-        <div>価格を選択</div>
+        <div className="flex flex-col justify-start">
+          <div>価格を選択</div>
+          <div className="flex justify-start">
+            <button className="my-1 underline" onClick={handleReset}>
+              リセット
+            </button>
+          </div>
+        </div>
+
         <button
           onClick={() => {
             props.setIsFilterPrice(!props.isFilterPrice);

@@ -17,10 +17,22 @@ const FIlterSize = (props: FilterSizeProps) => {
         : [...prevSize, size]
     );
   };
+
+  const handleReset = () => {
+    props.setSelectedSize([]);
+  };
+
   return (
     <>
       <div className="flex flex-row justify-between">
-        <div>サイズを選択</div>
+        <div className="flex flex-col">
+          <div>サイズを選択</div>
+          <div className="flex justify-start my-1">
+            <button className="underline" onClick={handleReset}>
+              リセット
+            </button>
+          </div>
+        </div>
         <button
           onClick={() => {
             props.setIsFilterSize(!props.isFilterSize);
