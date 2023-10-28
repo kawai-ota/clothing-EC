@@ -52,7 +52,7 @@ const AboutGoods = (props: AboutGoodsProps) => {
           } overflow-hidden`}
         >
           <div className="flex flex-col justify-center w-9/12">
-            <div className="grid grid-cols-3 gap-5 mb-5">
+            <div className="grid grid-cols-3 gap-7 mb-5">
               <div>
                 <h3 className="font-medium">カテゴリー</h3>
                 <p className="text-sm">{props.category}</p>

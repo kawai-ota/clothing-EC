@@ -64,7 +64,7 @@ const SignForm = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <div className="p-10 rounded-lg shadow-lg flex flex-col">
+      <div className="bg-white px-4 py-8 rounded-lg shadow-lg flex flex-col">
         <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
           {variant === "REGISTER" && (
             <>
@@ -74,8 +74,8 @@ const SignForm = () => {
                 label="名前"
                 register={register}
                 errors={errors}
+                required
                 disabled={isLoading}
-                required={false}
               />
             </>
           )}
@@ -121,7 +121,7 @@ const SignForm = () => {
           <div>
             {variant === "LOGIN"
               ? "新規登録をしますか？"
-              : "すでにアカウントが存在しています"}
+              : "アカウントが存在しています"}
           </div>
           <div onClick={toggleVariant} className="underline cursor-pointer">
             {variant === "LOGIN" ? "アカウントを作成する" : "ログインする"}
