@@ -20,6 +20,7 @@ const Contact = (props: ContactProps) => {
                 placeholder="名前"
                 id="name"
                 name="name"
+                required
               />
               <input
                 type="email"
@@ -27,6 +28,7 @@ const Contact = (props: ContactProps) => {
                 placeholder="メールアドレス"
                 id="email"
                 name="email"
+                required
               />
             </div>
             <input
@@ -35,12 +37,14 @@ const Contact = (props: ContactProps) => {
               placeholder="電話番号(ハイフンなし)"
               id="tel"
               name="tel"
+              required
             />
             <textarea
               className="w-full h-[150px] border-[1px] rounded-lg focus:border-[#31ACA3] px-3 focus:border-2 outline-none"
               placeholder="コメント"
               id="comment"
               name="comment"
+              required
             />
             <button
               className="bg-[#3EBCB5] hover:bg-[#46cdc6] w-[150px] h-[50px] mt-10 rounded-lg text-white font-bold"
