@@ -1,5 +1,7 @@
 # 🌅 　 TopPage
 
+![PAMアプリのスクリーンショット](./ecommerce/public/method_main.png)
+
 # 🔧 　使用技術
 
 - Next.js: 13.4.19(フレームワーク)
@@ -49,8 +51,10 @@ PAM は個人でアパレルブランドを運営している方、心を込め�
 ![PAMアプリのスクリーンショット](./ecommerce/public/method_main.png)
 
 3.アカウントを作成すれば作成した商品の出品をすることができます。
+![PAMアプリのスクリーンショット](./ecommerce/public/method_product.png)
 
 4.商品の購入をすることもできます。
+![PAMアプリのスクリーンショット](./ecommerce/public/method_buy.png)
 
 # 🔨 　今後実装したい機能
 
