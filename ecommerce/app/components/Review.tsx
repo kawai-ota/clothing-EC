@@ -59,7 +59,7 @@ const Review = ({ productId, userId }: ReviewProps) => {
         />
       </div>
       <button
-        className="px-5 p-2 border-[1px] bg-[#3EBCB5] text-white rounded-lg mt-5"
+        className="px-5 p-2 border-[1px] bg-[#3EBCB5] hover:bg-[#42c9c3] text-white rounded-lg mt-5"
         onClick={postData}
       >
         投稿
