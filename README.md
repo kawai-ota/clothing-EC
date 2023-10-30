@@ -98,6 +98,8 @@ PAM は個人でアパレルブランドを運営している方、心を込め�
 
 - レスポンシブ対応を細かく作成する
 
+- ブラー画像などを使用してUXを向上させる
+
 # 📝 　スライド資料
 
 <a href="https://docs.google.com/presentation/d/13DuybtLy9CJ3OvjskLzq8xLhCuuxpw_7-YHbmfiaUPI/edit?usp=sharing">スライド資料</a>
