@@ -42,8 +42,8 @@ const Contact = (props: ContactProps) => {
             <textarea
               className="w-full h-[150px] border-[1px] rounded-lg focus:border-[#31ACA3] px-3 focus:border-2 outline-none"
               placeholder="コメント"
-              id="comment"
-              name="comment"
+              id="message"
+              name="message"
               required
             />
             <button
