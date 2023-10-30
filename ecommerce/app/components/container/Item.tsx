@@ -24,7 +24,7 @@ const Item = async () => {
         {products.map((product) => (
           <div
             key={product.id}
-            className="rounded-lg shadow-md w-full sm:w-auto bg-white sm:ml-8 mr-12 "
+            className="rounded-lg shadow-md w-full sm:w-auto bg-white sm:ml-8 mr-12 sm:text-left text-center"
           >
             <Link href={`/dashboard/${product.id}`}>
               <div className="relative rounded-t-lg group">
@@ -39,8 +39,8 @@ const Item = async () => {
               <div className="p-4">
                 <h1 className="text-lg font-medium mb-2">{product.title}</h1>
                 <p className="text-sm text-gray-600">{product.store}</p>
-                <div className="flex justify-between items-center mt-2">
-                  <span className="text-xl font-medium text-[#31ACA3]">
+                <div className="flex sm:justify-between justify-center items-center mt-2">
+                  <span className="text-xl font-medium text-[#31ACA3] ">
                     ￥{formatPrice(product.price)}
                   </span>
                 </div>
