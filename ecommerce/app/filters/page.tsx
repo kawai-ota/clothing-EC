@@ -255,7 +255,14 @@ const Page = (props: FilterProps) => {
                 >
                   <Link href={`/dashboard/${product.id}`}>
                     <div className="relative rounded-t-lg group">
-                      <div style={{ height: "200px" }}>
+                      <div
+                        className="relative rounded-t-lg group"
+                        style={{
+                          width: "300px",
+                          height: "220px",
+                          overflow: "hidden",
+                        }}
+                      >
                         <img
                           src={product.images.split(",")[0]}
                           className="w-full h-full object-cover rounded-t-lg transform group-hover:scale-105 transition-transform"
