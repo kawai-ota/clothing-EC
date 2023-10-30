@@ -16,7 +16,7 @@ const Item = async () => {
   };
 
   return (
-    <div className="max-w-full mb-10">
+    <div className="max-w-full mb-8">
       <h1 className="py-3 font-medium text-3xl mt-10 mb-10 text-center mx-8">
         商品
       </h1>
@@ -24,7 +24,7 @@ const Item = async () => {
         {products.map((product) => (
           <div
             key={product.id}
-            className="rounded-lg shadow-md w-full sm:w-auto bg-white sm:ml-8 mr-12 sm:text-left text-center"
+            className="rounded-lg shadow-md w-full sm:w-auto bg-white sm:ml-4 sm:mb-8  sm:text-left text-center"
           >
             <Link href={`/dashboard/${product.id}`}>
               <div className="relative rounded-t-lg group">

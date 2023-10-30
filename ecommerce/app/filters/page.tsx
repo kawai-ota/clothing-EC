@@ -251,14 +251,14 @@ const Page = (props: FilterProps) => {
               {response.map((product: any) => (
                 <div
                   key={product.id}
-                  className="rounded-lg shadow-md w-full sm:w-auto bg-white mr-12 ml-2"
+                  className="rounded-lg shadow-md w-full sm:w-auto sm:mr-4 sm:mb-8 bg-white  sm:text-left text-center"
                 >
                   <Link href={`/dashboard/${product.id}`}>
                     <div className="relative rounded-t-lg group">
                       <div
-                        className="relative rounded-t-lg group"
+                        className="relative rounded-t-lg group sm:justify-normal justify-center "
                         style={{
-                          width: "300px",
+                          width: "350px",
                           height: "220px",
                           overflow: "hidden",
                         }}
@@ -276,7 +276,7 @@ const Page = (props: FilterProps) => {
                         {product.title}
                       </h1>
                       <p className="text-sm text-gray-600">{product.store}</p>
-                      <div className="flex justify-between items-center mt-2">
+                      <div className="flex items-center mt-2 sm:justify-normal justify-center">
                         <span className="text-xl font-medium text-[#31ACA3]">
                           ￥{formatPrice(product.price)}
                         </span>

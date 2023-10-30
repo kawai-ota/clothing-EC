@@ -80,8 +80,6 @@ const AllCartProduct = async (props: AllCartProductProps) => {
             <h3 className="text-sm text-neutral-600 mb-2">
               アパレル名:{cartProduct?.store}
             </h3>
-          </div>
-          <div className="absolute top-0 right-0 mt-4 mr-2">
             <DeleteCart productId={cartProduct?.id} userId={props.userId} />
           </div>
         </div>
