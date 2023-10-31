@@ -126,7 +126,7 @@ const Page = (props: FilterProps) => {
         <Navbar />
       </div>
       <hr />
-      <div className="flex items-center sm:ml-28 mx-auto mt-10 relative">
+      <div className="flex items-center justify-center sm:ml-28 mx-auto mt-10 relative">
         <div className="">
           <h1 className="py-3 mb-10 text-3xl font-medium">商品</h1>
           <div className="flex sm:flex-row flex-col">
@@ -246,12 +246,12 @@ const Page = (props: FilterProps) => {
               )}
             </div>
           </div>
-          <div className=" max-w-full mb-10 ">
+          <div className=" max-w-full mb-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-8">
               {response.map((product: any) => (
                 <div
                   key={product.id}
-                  className="rounded-lg shadow-md w-full sm:w-auto sm:mr-4 sm:mb-8 bg-white  sm:text-left text-center"
+                  className="rounded-lg shadow-md w-full sm:w-auto sm:mr-4 sm:mb-8 bg-white  sm:text-left text-center flex justify-center"
                 >
                   <Link href={`/dashboard/${product.id}`}>
                     <div className="relative rounded-t-lg group">
