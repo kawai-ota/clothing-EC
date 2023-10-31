@@ -48,16 +48,18 @@ const Page = async (props: MyBrandsProps) => {
                     />
                   </Link>
                 </div>
-                <div className="flex flex-col sm:flex-grow ml-0 sm:ml-10 justify-center">
+                <div className="flex flex-col sm:flex-grow ml-0 sm:ml-10 text-center sm:text-left">
                   <h1 className="text-2xl mb-3">{product.title}</h1>
                   <h1 className="mb-3"> ￥{formatPrice(product.price)}</h1>
                   <h1 className="mb-3"> カテゴリー:{product.category}</h1>
                   <h1 className="mb-3"> スタイル:{product.style}</h1>
                   <h1 className="mb-3"> アパレル名:{product.store}</h1>
-                  <DeleteProduct
-                    productId={product.id}
-                    userId={product.userId}
-                  />
+                  <div className="flex sm:justify-normal justify-center">
+                    <DeleteProduct
+                      productId={product.id}
+                      userId={product.userId}
+                    />
+                  </div>
                 </div>
               </div>
 
