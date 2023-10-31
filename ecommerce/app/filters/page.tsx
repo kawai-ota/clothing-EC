@@ -126,7 +126,7 @@ const Page = (props: FilterProps) => {
         <Navbar />
       </div>
       <hr />
-      <div className="flex items-center justify-center sm:ml-28 mx-auto mt-10 relative">
+      <div className="flex items-center sm:justify-normal justify-center sm:ml-28 mx-auto mt-10 relative">
         <div className="">
           <h1 className="py-3 mb-10 text-3xl font-medium">商品</h1>
           <div className="flex sm:flex-row flex-col">
