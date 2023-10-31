@@ -16,11 +16,11 @@ const Item = async () => {
   };
 
   return (
-    <div className="max-w-full mb-8">
-      <h1 className="py-3 font-medium text-3xl mt-10 mb-10 text-center mx-8">
+    <div className="max-w-full mb-8 flex flex-col justify-center ml-10 mr-10">
+      <h1 className="py-3 font-medium text-3xl mt-10 mb-10 text-center">
         商品
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {products.map((product) => (
           <div
             key={product.id}
