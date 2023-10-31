@@ -6,7 +6,7 @@ type ContactProps = {};
 const Contact = (props: ContactProps) => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center mx-auto mt-10 space-y-6">
+      <div className="flex flex-col items-center justify-center mx-auto my-10 space-y-6">
         <h1 className="text-5xl text-center">お問い合わせ</h1>
         <div className="flex flex-col">
           <form
