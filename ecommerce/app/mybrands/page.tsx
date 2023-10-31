@@ -36,33 +36,29 @@ const Page = async (props: MyBrandsProps) => {
         <div>
           {allmyproduct.map((product) => (
             <div
-              key={product.id}
-              className="relative shadow-lg p-5 rounded-lg mt-10 sm:w-8/12 mx-auto"
+              key={product?.id}
+              className="flex flex-col sm:flex-row items-center w-full lg:w-[70%] mx-auto shadow-lg p-5 rounded-lg mt-6 relative"
             >
-              <div className="flex flex-col sm:flex-row">
-                <div className="sm:w-[200px] sm:h-[200px] mb-4 sm:mb-0">
-                  <Link href={`/dashboard/${product.id}`}>
-                    <img
-                      className="w-full h-[200px]  rounded-lg"
-                      src={product.images.split(",")[0]}
-                    />
-                  </Link>
-                </div>
-                <div className="flex flex-col sm:flex-grow ml-0 sm:ml-10 text-center sm:text-left">
-                  <h1 className="text-2xl mb-3">{product.title}</h1>
-                  <h1 className="mb-3"> ￥{formatPrice(product.price)}</h1>
-                  <h1 className="mb-3"> カテゴリー:{product.category}</h1>
-                  <h1 className="mb-3"> スタイル:{product.style}</h1>
-                  <h1 className="mb-3"> アパレル名:{product.store}</h1>
-                  <div className="flex sm:justify-normal justify-center">
-                    <DeleteProduct
-                      productId={product.id}
-                      userId={product.userId}
-                    />
-                  </div>
+              <Link href={`/dashboard/${product?.id}`}>
+                <img
+                  src={product?.images.split(",")[0]}
+                  className="w-[200px] h-[200px] object-cover object-top mb-4 sm:mb-0 rounded-lg"
+                  alt=""
+                />
+              </Link>
+              <div className="flex flex-col sm:flex-grow ml-0 sm:ml-10 text-center sm:text-left">
+                <h1 className="text-2xl mb-3">{product.title}</h1>
+                <h1 className="mb-3"> ￥{formatPrice(product.price)}</h1>
+                <h1 className="mb-3"> カテゴリー:{product.category}</h1>
+                <h1 className="mb-3"> スタイル:{product.style}</h1>
+                <h1 className="mb-3"> アパレル名:{product.store}</h1>
+                <div className="flex sm:justify-normal justify-center">
+                  <DeleteProduct
+                    productId={product.id}
+                    userId={product.userId}
+                  />
                 </div>
               </div>
-
               {session?.user.id === product.userId && (
                 <Link
                   className="absolute top-0 right-0"
