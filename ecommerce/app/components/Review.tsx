@@ -46,7 +46,7 @@ const Review = ({ productId, userId }: ReviewProps) => {
         value={defaultReviewForm.star}
         size={17}
         isEdit={true}
-        activeColors={["red", "orange", "#FFCE00", "#9177FF", "#3EBCB5"]}
+        activeColors={["#FFCE00", "#FFCE00", "#FFCE00", "#FFCE00", "#FFCE00"]}
       />
       <h2 className="mt-4">コメントを書いてください</h2>
       <div>
