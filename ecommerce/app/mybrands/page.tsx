@@ -17,10 +17,14 @@ const Page = async (props: MyBrandsProps) => {
     const allmyproduct = await getMyProduct();
     if (allmyproduct.length === 0) {
       return (
-        <div className="relative flex items-center justify-center">
-          <h1 className="absolute top-[80%] text-2xl text-[#3EBCB5]">
-            出品している商品はありません。
-          </h1>
+        <div className="px-5 max-w-[1280px] mx-auto mb-20">
+          <Navbar />
+          <hr />
+          <div className="relative flex items-center justify-center">
+            <h1 className="absolute top-[80%] text-2xl text-[#3EBCB5] mt-4">
+              出品している商品はありません。
+            </h1>
+          </div>
         </div>
       );
     }
