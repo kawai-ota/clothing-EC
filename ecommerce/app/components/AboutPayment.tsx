@@ -7,7 +7,7 @@ const Payment = (props: AboutPaymentProps) => {
     <div className="w-8/12 mt-2 ml-10">
       お支払いに関してましては、以下のカードからのお支払いが可能になります。
       <hr className="my-2" />
-      <span>Visa etc...</span>
+      <span>Visa JCBなどからのお支払いができます。</span>
     </div>
   );
 };
