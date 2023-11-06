@@ -93,7 +93,7 @@ const Edit = ({
       ...formData,
       images: stringImages,
       description: Description,
-      userId:Id,
+      userId: Id,
     });
   };
 
@@ -102,7 +102,7 @@ const Edit = ({
       ...prevFormData,
       description: Description,
       images: imageUrls.toString(),
-      userId: id,
+      userId: Id,
     }));
   }, [imageUrls]);
 
