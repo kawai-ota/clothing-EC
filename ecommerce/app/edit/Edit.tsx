@@ -132,7 +132,7 @@ const Edit = ({
             </label>
             <input
               type="text"
-              className="w-full h-[50px] border-[1px] rounded-lg focus:border-pink-500 px-3 focus:border-2 outline-none"
+              className="w-full h-[50px] border-[1px] rounded-lg focus:border-[#3EBCB5] px-3 focus:border-2 outline-none"
               name="title"
               value={formData.title}
               onChange={handleChange}
@@ -189,7 +189,7 @@ const Edit = ({
           </div>
           <div>
             <label htmlFor="inventory" className="font-medium">
-              Inventory
+              在庫
             </label>
             <input
               type="number"
