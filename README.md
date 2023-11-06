@@ -1,4 +1,4 @@
-# 🌅 　 TopPage
+# 🌅 　 Personal Apparel Market
 
 <a href = 'https://clothing-ec.vercel.app/'>![PAMアプリのスクリーンショット](./ecommerce/public/method_main.png)</a>
 
