@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 type FilterCategoryProps = {
   setIsFilterCategory: any;
-  isFilterCategory: any;
+  isFilterCategory: boolean;
   setSelectedCategories: React.Dispatch<React.SetStateAction<string[]>>;
   selectedCategories: string[];
 };
