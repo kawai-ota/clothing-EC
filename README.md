@@ -143,5 +143,5 @@ npm install
 4.Run the app
 
 ```
-npm start
+npm run dev
 ```
