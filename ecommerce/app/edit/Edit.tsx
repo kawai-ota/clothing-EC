@@ -93,7 +93,7 @@ const Edit = ({
       ...formData,
       images: stringImages,
       description: Description,
-      userId: id,
+      userId:Id,
     });
   };
 
