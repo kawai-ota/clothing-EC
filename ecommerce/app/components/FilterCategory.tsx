@@ -10,14 +10,6 @@ type FilterCategoryProps = {
 };
 
 const FilterCategory = (props: FilterCategoryProps) => {
-  const toggleCategory = (category: string) => {
-    props.setSelectedCategories((prevCategories) =>
-      prevCategories.includes(category)
-        ? prevCategories.filter((c) => c !== category)
-        : [...prevCategories, category]
-    );
-  };
-
   const handleReset = () => {
     props.setSelectedCategories([]);
   };

@@ -103,9 +103,9 @@ const Info: React.FC<InfoProps> = ({
             className={`flex items-center justify-center p-1 px-2 border-[1px] cursor-pointer text-center`}
             onClick={() => handleSelectSize(size)}
             style={{
-              width: "40px", // サイズ部分の幅
-              height: "40px", // サイズ部分の高さ
-              borderRadius: "50%", // 完璧な円形にする
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
               background: selectedSizes.includes(size) ? "black" : "white",
               color: selectedSizes.includes(size) ? "white" : "black",
             }}
