@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 type FilterPriceProps = {
   setIsFilterPrice: any;
-  isFilterPrice: any;
+  isFilterPrice: boolean;
   price: { min: any; max: any };
   setPrice: React.Dispatch<React.SetStateAction<{ min: any; max: any }>>;
 };

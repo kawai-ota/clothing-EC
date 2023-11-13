@@ -191,7 +191,7 @@ const Page = (props: FilterProps) => {
             <div className="sm:ml-5 relative">
               <span
                 className="flex flex-row items-center text-gray-600 cursor-pointer hover:text-gray-900 hover:underline mb-2"
-                ref={colorModalRef}
+                ref={priceModalRef}
                 onClick={() => {
                   setIsFilterPrice(!isFilterPrice);
                 }}
