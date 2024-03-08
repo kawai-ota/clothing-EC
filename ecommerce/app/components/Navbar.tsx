@@ -31,6 +31,9 @@ const Navbar = () => {
           <li className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer">
             <Link href="/addproduct">ブランドの出品</Link>
           </li>
+          <li className="whitespace-nowrap hover:bg-gray-100 hover:text-neutral-900 px-5 py-2 cursor-pointer">
+            <Link href="/favorite">お気に入り</Link>
+          </li>
         </ul>
       );
     }
