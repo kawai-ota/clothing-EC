@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import getItem from "@/app/actions/getItem";
+import Image from "next/image";
 
 export const dynamic = "force-dynamic";
 
@@ -29,10 +30,16 @@ const Item = async () => {
             <Link href={`/dashboard/${product.id}`}>
               <div className="relative rounded-t-lg group">
                 <div style={{ height: "200px" }}>
-                  <img
+                  <Image
                     src={product.images.split(",")[0]}
                     className="w-full h-full object-cover rounded-t-lg transform group-hover:scale-105 transition-transform"
-                    alt=""
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVB0Rw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN0L5pSDwAEIwHOVKX3XQAAAABJRU5ErkJggg=="
+                    width={250}
+                    height={250}
+                    quality={100}
+                    style={{ transition: "0.3s" }}
+                    alt="商品画像"
                   />
                 </div>
               </div>
