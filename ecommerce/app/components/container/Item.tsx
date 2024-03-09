@@ -40,6 +40,7 @@ const Item = async () => {
                     quality={100}
                     style={{ transition: "0.3s" }}
                     alt="商品画像"
+                    loading="lazy"
                   />
                 </div>
               </div>
